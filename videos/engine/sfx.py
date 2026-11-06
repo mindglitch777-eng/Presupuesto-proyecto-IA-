@@ -139,7 +139,18 @@ def crowd():
     return lowpass(noise(dur), 30) * np.sin(np.linspace(0, np.pi, int(SR * dur))) * 0.6
 
 
-SFX = dict(hit=hit, boom=boom, pop=pop, tick=tick, whoosh=whoosh, error=error, cash=cash, check=check,
+def glitch():
+    out = []
+    for k in range(6):
+        d = 0.025 + 0.02 * (k % 3)
+        n = int(SR * d)
+        f = 200 + 900 * ((k * 37) % 7) / 7
+        seg = np.sign(np.sin(2 * np.pi * f * np.arange(n) / SR)) * 0.25 + noise(d) * 0.25
+        out.append(np.round(seg * 4) / 4)  # "bitcrush"
+    return np.concatenate(out) * 0.7
+
+
+SFX = dict(glitch=glitch, hit=hit, boom=boom, pop=pop, tick=tick, whoosh=whoosh, error=error, cash=cash, check=check,
            rise=rise, buzz=buzz, door=door, glass=glass, snip=snip, cricket=cricket, crowd=crowd)
 
 
