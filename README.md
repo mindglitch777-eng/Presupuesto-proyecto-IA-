@@ -6,12 +6,23 @@ Diez videos verticales animados con código para TikTok, YouTube Shorts y Reels.
 - **`videos/config.js`**: precio del corte, seña, precios de la app y tu usuario. Si cambiás un valor y volvés a renderizar, los montos se recalculan.
 - **`videos/guiones/01.js` … `10.js`**: cada video, escena por escena.
 - **`videos/engine/`**: el motor. Dibuja cada cuadro en un canvas, lo captura con Playwright y lo codifica con ffmpeg. Encima suma:
-  - **Voz:** `voz.py` usa una voz Piper local, mexicana masculina por defecto, sin costo por uso. Los montos se leen en palabras.
+  - **Voz:** `voz.py` usa Edge TTS, con la voz masculina argentina `es-AR-TomasNeural` por defecto. Si no hay internet, cae a una voz Piper local. Los montos se leen en palabras.
   - **Música:** `musica.py` genera un beat de trap/phonk distinto para cada video. Es todo sintetizado, sin samples de terceros.
   - **Efectos:** `sfx.py` los sintetiza y mezcla todo, con la música que baja cuando habla la voz.
 - **`videos/render/`**: los MP4 terminados (1080×1920, 30 fps).
 
-## Renderizar
+## Renderizar en GitHub (recomendado)
+
+El workflow `.github/workflows/videos.yml` renderiza los 10 videos en paralelo con la voz de Edge TTS y los sube a `videos/render/`. Se corre de dos formas:
+
+- **Solo:** cada vez que se cambia un guion, el motor o `config.js`.
+- **A mano:** desde el celular, en la pestaña **Actions** → **Renderizar videos** → **Run workflow**. Ahí se eligen los videos (por ejemplo `01,04` o `todos`), la voz y la velocidad.
+
+Tarda unos 5 minutos. Los links de descarga son siempre los mismos: `https://github.com/mindglitch777-eng/Presupuesto-proyecto-IA-/raw/main/videos/render/01.mp4` (y así del 01 al 10).
+
+Otras voces masculinas para probar: `es-MX-JorgeNeural`, `es-CO-GonzaloNeural`, `es-US-AlonsoNeural`.
+
+## Renderizar en una computadora
 
 ```bash
 cd videos

@@ -13,6 +13,7 @@ const testFrames = fi > 0 ? process.argv[fi + 1].split(',').map(Number) : null;
 const out = path.resolve(here, '../out');
 const work = path.join(out, 'tmp-' + id);
 fs.mkdirSync(work, { recursive: true });
+fs.mkdirSync(path.resolve(here, '../render'), { recursive: true });
 
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
@@ -22,6 +23,7 @@ await page.evaluate(async () => {
   await document.fonts.load('900 100px "Inter Display"');
   await document.fonts.load('800 100px "Inter Display"');
   await document.fonts.load('600 40px "Inter Display"');
+  await document.fonts.load('700 40px "Inter Display"');
   await document.fonts.load('100px "Noto Color Emoji"', '💈');
 });
 // 1) narración: se genera la voz de cada escena y se alargan las escenas que lo necesiten

@@ -1,0 +1,2 @@
+Inter Display (Rasmus Andersson) y Noto Color Emoji (Google) se distribuyen bajo la SIL Open Font License 1.1: https://openfontlicense.org
+Se incluyen para que el render se vea igual en cualquier máquina, por ejemplo en GitHub Actions.

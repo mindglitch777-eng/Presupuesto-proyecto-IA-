@@ -1,0 +1,99 @@
+# Renderiza los videos en GitHub con la voz de Edge TTS y los sube a videos/render/.
+# Se corre solo cuando cambian los guiones o el motor, o a mano desde la pestaña Actions → "Renderizar videos" → Run workflow.
+name: Renderizar videos
+
+on:
+  workflow_dispatch:
+    inputs:
+      videos:
+        description: 'Qué videos renderizar (ej: 01,04,10) o "todos"'
+        default: todos
+      voz:
+        description: 'Voz de Edge TTS (es-AR-TomasNeural, es-MX-JorgeNeural, es-CO-GonzaloNeural...)'
+        default: es-AR-TomasNeural
+      velocidad:
+        description: 'Velocidad de la voz (ej: +10%, +0%, -5%)'
+        default: '+10%'
+  push:
+    branches: [main]
+    paths:
+      - 'videos/guiones/**'
+      - 'videos/engine/**'
+      - 'videos/config.js'
+      - '.github/workflows/videos.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: renderizar-videos
+  cancel-in-progress: true
+
+jobs:
+  lista:
+    runs-on: ubuntu-latest
+    outputs:
+      ids: ${{ steps.l.outputs.ids }}
+    steps:
+      - id: l
+        run: |
+          v="${{ github.event.inputs.videos || 'todos' }}"
+          if [ "$v" = "todos" ]; then v="01,02,03,04,05,06,07,08,09,10"; fi
+          echo "ids=$(echo "$v" | jq -Rc 'gsub(" ";"") | split(",")')" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: lista
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        id: ${{ fromJson(needs.lista.outputs.ids) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            videos/engine
+            videos/guiones
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar ffmpeg, Playwright y Python
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          cd videos/engine && npm install --no-save --no-package-lock playwright@1.49.1 && npx playwright install --with-deps chromium
+          pip install -q edge-tts numpy soundfile num2words
+      - name: Renderizar ${{ matrix.id }}
+        env:
+          VOZ_MOTOR: edge
+          VOZ_EDGE: ${{ github.event.inputs.voz || 'es-AR-TomasNeural' }}
+          VOZ_RATE: ${{ github.event.inputs.velocidad || '+10%' }}
+        run: cd videos && node engine/render.mjs ${{ matrix.id }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ matrix.id }}
+          path: videos/render/${{ matrix.id }}.mp4
+          retention-days: 14
+
+  publicar:
+    needs: render
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: video-*
+          merge-multiple: true
+          path: videos/render
+      - name: Subir los videos al repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add videos/render/*.mp4
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Videos renderizados con voz ${{ github.event.inputs.voz || 'es-AR-TomasNeural' }}"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
