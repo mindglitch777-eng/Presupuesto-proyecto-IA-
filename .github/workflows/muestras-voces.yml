@@ -1,0 +1,39 @@
+# Genera una muestra de cada voz masculina de Edge TTS en español y las sube a videos/voces-muestras/.
+name: Muestras de voces
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'videos/engine/muestras_voces.py'
+      - '.github/workflows/muestras-voces.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  muestras:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            videos/engine
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q edge-tts
+          python videos/engine/muestras_voces.py
+      - name: Subir las muestras
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git sparse-checkout disable
+          git add videos/voces-muestras
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Muestras de voces masculinas de Edge TTS"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
