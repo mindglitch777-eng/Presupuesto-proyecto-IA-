@@ -20,7 +20,7 @@ VIDEO({
       G.txt(lt, '*BUSCO* *5* *BARBERÍAS.*', { y: 640, size: 150, stagger: .1 }); casilleros(G, lt, 0, .4);
     } },
     { vo: `No para venderles.`, d: 1.6, sfx: [[0, 'pop'], [.5, 'hit']], draw(G, lt) { G.txt(lt, 'No para venderles.', { y: 820, size: 92, strike: .5 }); } },
-    { vo: `Soy de Corrientes, y armo apps.`, d: 2.4, theme: 'blue', sfx: [[0, 'whoosh'], [.6, 'pop']], draw(G, lt) {
+    { vo: `Soy de Corrientes, y hago aplicaciones.`, d: 2.4, theme: 'blue', sfx: [[0, 'whoosh'], [.6, 'pop']], draw(G, lt) {
       G.stack(lt, [['Soy de *Corrientes*', { size: 100 }], ['y armo apps.', { size: 92, at: .3 }]], { y: 420 });
       G.emoji(lt, '🇦🇷', G.CX, 960, 300, { at: .3 });
       const r = 30 + 20 * Math.abs(Math.sin(lt * 4));

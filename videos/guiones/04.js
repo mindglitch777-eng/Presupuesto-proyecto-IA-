@@ -1,4 +1,5 @@
 // 4. "Este se fue. Y este. Y este." — la fila por orden de llegada
+const K = CFG.corte;
 function banco(G, n = 4, y = 1120, col = '#5A5A6E') {
   G.ctx.fillStyle = '#2A2A36'; G.rr(120, y + 120, 760, 40, 14); G.ctx.fill();
   for (let i = 0; i < n; i++) G.person(200 + i * 200, y, .8, col);

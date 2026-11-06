@@ -14,7 +14,7 @@ VIDEO({
   title: '47 mensajes',
   theme: 'blue',
   scenes: [
-    { vo: `¿Tenés turno hoy? ¿A qué hora cerrás? ¿Y mañana?`, d: 1.6, shake: 14, shakeDur: 1.6, sfx: [[0, 'buzz'], [.4, 'buzz'], [.8, 'buzz'], [1.2, 'buzz']], draw(G, lt) {
+    { vo: `¿Tenés turno para hoy? ¿A qué hora cerrás? ¿Y mañana?`, d: 1.6, shake: 14, shakeDur: 1.6, sfx: [[0, 'buzz'], [.4, 'buzz'], [.8, 'buzz'], [1.2, 'buzz']], draw(G, lt) {
       lluvia(G, lt, 12, 1.2);
     } },
     { vo: `Y vos, estás cortando.`, d: 1.6, sfx: [[0, 'hit'], [.3, 'snip'], [.9, 'snip'], [.6, 'buzz', .6]], draw(G, lt) {

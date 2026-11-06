@@ -25,7 +25,7 @@ VIDEO({
       G.txt(lt, '“¿Dónde está la *plata?*”', { y: 700, size: 110, at: .4 });
       G.emoji(lt, '🗃️', G.CX, 1120, 260, { at: .9, rot: Math.sin(lt * 20) * .05 });
     } },
-    { vo: `Ahora anoto cada corte con un toque.`, d: 2.8, theme: 'green', sfx: [[0, 'whoosh'], [1.0, 'pop'], [1.4, 'pop'], [1.8, 'pop']], draw(G, lt) {
+    { vo: `Ahora, cada corte lo registro con un toque.`, d: 2.8, theme: 'green', sfx: [[0, 'whoosh'], [1.0, 'pop'], [1.4, 'pop'], [1.8, 'pop']], draw(G, lt) {
       G.txt(lt, 'Ahora anoto cada corte *con* *un* *toque.*', { y: 290, size: 78 });
       G.phone(lt, G.CX, 1020, 1.35, (c, l) => {
         G.UI.header('Caja de hoy', 'Barbería Tomás');
