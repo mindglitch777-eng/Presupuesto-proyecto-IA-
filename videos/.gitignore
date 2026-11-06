@@ -1,3 +1,4 @@
 out/
 voces/
 render/*.part.mp4
+__pycache__/
