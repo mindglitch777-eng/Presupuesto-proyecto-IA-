@@ -16,35 +16,35 @@ VIDEO({
   title: 'Este se fue',
   theme: 'red',
   scenes: [
-    { d: 1.2, sfx: [[0, 'hit'], [.5, 'door']], draw(G, lt) { banco(G); seVa(G, lt, 0); G.txt(lt, '*ESTE* *SE* *FUE.*', { y: 420, size: 130, stagger: .08 }); } },
-    { d: 1.0, sfx: [[0, 'hit'], [.45, 'door']], draw(G, lt) { banco(G); seVa(G, lt, 0); G.txt(lt, '*Y* *ESTE.*', { y: 420, size: 150 }); } },
-    { d: 1.0, sfx: [[0, 'hit'], [.45, 'door']], draw(G, lt) { banco(G); seVa(G, lt, 0); G.txt(lt, '*Y* *ESTE.*', { y: 420, size: 170 }); } },
-    { d: 2.0, shake: 30, shakeDur: .8, sfx: [[0, 'boom'], [0, 'error']], draw(G, lt) {
+    { vo: `Este se fue.`, d: 1.2, sfx: [[0, 'hit'], [.5, 'door']], draw(G, lt) { banco(G); seVa(G, lt, 0); G.txt(lt, '*ESTE* *SE* *FUE.*', { y: 420, size: 130, stagger: .08 }); } },
+    { vo: `Y este.`, d: 1.0, sfx: [[0, 'hit'], [.45, 'door']], draw(G, lt) { banco(G); seVa(G, lt, 0); G.txt(lt, '*Y* *ESTE.*', { y: 420, size: 150 }); } },
+    { vo: `Y este.`, d: 1.0, sfx: [[0, 'hit'], [.45, 'door']], draw(G, lt) { banco(G); seVa(G, lt, 0); G.txt(lt, '*Y* *ESTE.*', { y: 420, size: 170 }); } },
+    { vo: `${P(K*3)} en diez minutos.`, d: 2.0, shake: 30, shakeDur: .8, sfx: [[0, 'boom'], [0, 'error']], draw(G, lt) {
       G.cash(lt, 0, -CFG.corte * 3, { y: 820, size: 220, dur: .7 });
       G.txt(lt, 'en *10* *minutos.*', { y: 1080, size: 110, at: .5 });
     } },
-    { d: 1.6, sfx: [[0, 'whoosh']], draw(G, lt) {
+    { vo: `No se van porque no quieran cortarse.`, d: 1.6, sfx: [[0, 'whoosh']], draw(G, lt) {
       G.stack(lt, [['No se van porque', { size: 90 }], ['no quieran *cortarse.*', { size: 96, at: .3 }]], { y: 820 });
     } },
-    { d: 2.4, sfx: [[0, 'pop'], [.6, 'hit']], draw(G, lt) {
+    { vo: `Se van porque no saben cuánto falta.`, d: 2.4, sfx: [[0, 'pop'], [.6, 'hit']], draw(G, lt) {
       banco(G, 4, 1200);
       G.stack(lt, [['Se van porque', { size: 90 }], ['*no* *saben* *cuánto* *falta.*', { size: 100, at: .3 }]], { y: 520 });
       G.withT(G.CX, 860, G.popS(lt, .6) * (1 + .05 * Math.sin(lt * 8)), 0, 1, () => {
         G.ctx.font = `900 280px ${G.FONT}`; G.ctx.fillStyle = G.C.yellow; G.ctx.textAlign = 'center'; G.ctx.textBaseline = 'middle'; G.ctx.fillText('?', 0, 0);
       });
     } },
-    { d: 2.0, theme: 'neutral', sfx: [[0, 'whoosh'], [.4, 'pop']], draw(G, lt) {
+    { vo: `Ahora tengo un cu erre en la puerta.`, d: 2.0, theme: 'neutral', sfx: [[0, 'whoosh'], [.4, 'pop']], draw(G, lt) {
       G.txt(lt, 'Ahora tengo un *QR* en la puerta.', { y: 360, size: 88 });
       const s = G.popS(lt, .3) * (1 + lt * .05);
       G.withT(G.CX, 980, s, 0, 1, () => G.qr(-230, -230, 460, 9));
       G.txt(lt, 'ANOTATE ACÁ', { y: 1330, size: 64, at: .6, color: G.C.yellow, stagger: 0 });
     } },
-    { d: 2.4, theme: 'neutral', sfx: [[0, 'pop'], [.9, 'whoosh']], draw(G, lt) {
+    { vo: `Escanean, se anotan, y se van a tomar un café.`, d: 2.4, theme: 'neutral', sfx: [[0, 'pop'], [.9, 'whoosh']], draw(G, lt) {
       G.stack(lt, [['Escanean, se anotan', { size: 88 }], ['y se van a tomar *un* *café.*', { size: 88, at: .4 }]], { y: 480 });
       const x = G.lerp(G.CX, 1250, G.E.inOut(G.prog(lt, .9, 1.2)));
       G.person(x, 1080, 1.1, '#fff'); G.emoji(lt, '☕', x + 110, 1040, 110, { at: .6 });
     } },
-    { d: 3.2, theme: 'green', sfx: [[0, 'whoosh'], [1.0, 'tick'], [1.9, 'tick'], [2.6, 'check']], draw(G, lt) {
+    { vo: `Y en el celu ven en qué lugar de la fila van.`, d: 3.2, theme: 'green', sfx: [[0, 'whoosh'], [1.0, 'tick'], [1.9, 'tick'], [2.6, 'check']], draw(G, lt) {
       G.txt(lt, 'Y en su celu ve esto:', { y: 280, size: 80 });
       G.phone(lt, G.CX, 1020, 1.35, (c, l) => {
         G.UI.header('Tu lugar en la fila', 'Barbería Tomás');
@@ -56,16 +56,16 @@ VIDEO({
         G.UI.label(680, 'Te avisamos acá cuando falte poco', '#888', 20);
       }, { at: .1 });
     } },
-    { d: 2.0, theme: 'green', sfx: [[0, 'whoosh'], [.8, 'check']], draw(G, lt) {
+    { vo: `Vuelven justo cuando les toca.`, d: 2.0, theme: 'green', sfx: [[0, 'whoosh'], [.8, 'check']], draw(G, lt) {
       G.person(G.lerp(1250, G.CX, G.E.out(G.prog(lt, 0, .8))), 1080, 1.1, G.C.green);
       G.txt(lt, 'Vuelven *justo* cuando les toca.', { y: 460, size: 94, boxColor: G.C.green });
       G.check(lt, G.CX, 1420, 80, .8);
     } },
-    { d: 2.2, theme: 'green', sfx: [[0, 'rise'], [.9, 'cash']], draw(G, lt) {
+    { vo: `El banco vacío. La caja llena.`, d: 2.2, theme: 'green', sfx: [[0, 'rise'], [.9, 'cash']], draw(G, lt) {
       G.stack(lt, [['El banco vacío.', { size: 96 }], ['La caja *llena.*', { size: 110, at: .4, boxColor: G.C.green }]], { y: 600 });
       G.cash(lt, -CFG.corte * 3, CFG.corte * 3, { y: 1050, size: 200, at: .5, dur: .9, color: lt < .9 ? G.C.red : G.C.green });
     } },
-    { d: 2.4, theme: 'yellow', sfx: [[0, 'pop'], [.7, 'pop']], draw(G, lt) {
+    { vo: `¿Atendés por orden de llegada? Contame.`, d: 2.4, theme: 'yellow', sfx: [[0, 'pop'], [.7, 'pop']], draw(G, lt) {
       G.txt(lt, '¿Atendés por orden *de* *llegada?*', { y: 720, size: 96 });
       G.arrowDown(lt, G.CX, 1130, .7);
       G.txt(lt, CFG.usuario, { y: 1400, size: 40, weight: 700, color: '#C9C9D6', at: .9, stagger: 0 });

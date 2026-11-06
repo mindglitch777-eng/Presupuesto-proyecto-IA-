@@ -331,9 +331,17 @@
 
   // ---------- línea de tiempo ----------
   const FPS = 30;
+  // marcas para la narración: P(10000) se lee "diez mil pesos", N(14) se lee "catorce"
+  window.P = n => `[[${Math.round(n)}]]`;
+  window.N = n => `{{${Math.round(n)}}}`;
   window.VIDEO = function (def) {
     let f0 = 0;
-    def.scenes.forEach(s => { s.frames = Math.round(s.d * FPS); s.f0 = f0; s.start = f0 / FPS; f0 += s.frames; });
+    const vd = window.VO_DUR || [];
+    def.scenes.forEach((s, i) => {
+      s.voAt = s.voAt ?? .08;
+      if (vd[i]) s.d = Math.max(s.d, s.voAt + vd[i].dur + .22); // la escena dura al menos lo que dura la voz
+      s.frames = Math.round(s.d * FPS); s.f0 = f0; s.start = f0 / FPS; f0 += s.frames;
+    });
     def.frames = f0; def.duration = f0 / FPS;
     def.sfxAll = [];
     def.scenes.forEach(s => (s.sfx || []).forEach(([o, type, vol]) => def.sfxAll.push({ t: s.start + o, type, vol: vol ?? 1 })));

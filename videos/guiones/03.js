@@ -21,37 +21,37 @@ VIDEO({
   title: 'Era a las 5 o a las 6',
   theme: 'yellow',
   scenes: [
-    { d: 1.7, shake: 14, sfx: [[0, 'boom'], [.4, 'hit']], draw(G, lt) {
+    { vo: `¿Martín era a las cinco, o a las seis?`, d: 1.7, shake: 14, sfx: [[0, 'boom'], [.4, 'hit']], draw(G, lt) {
       hoja(G, lt, G.CX, 1080, .95);
       G.txt(lt, '¿Martín era a las *5* o a las *6?*', { y: 330, size: 96, at: .1 });
     } },
-    { d: 1.8, theme: 'red', sfx: [[0, 'whoosh'], [.75, 'hit'], [.75, 'glass', .5]], draw(G, lt) {
+    { vo: `Llegan dos Martín, a la misma hora.`, d: 1.8, theme: 'red', sfx: [[0, 'whoosh'], [.75, 'hit'], [.75, 'glass', .5]], draw(G, lt) {
       const p = G.E.out(G.prog(lt, 0, .75));
       G.person(G.lerp(-150, 330, p), 1050, 1.3, '#E8E8F0'); G.person(G.lerp(1230, 670, p), 1050, 1.3, '#E8E8F0');
       G.stack(lt, [['Llegan *dos* *Martín*', { size: 100, stagger: .06 }], ['a la misma hora.', { size: 80, at: .3 }]], { y: 470, gap: 24 });
       if (lt > .75) G.emoji(lt, '💥', G.CX, 900, 220, { at: .75 });
     } },
-    { d: 1.6, theme: 'red', sfx: [[.2, 'door'], [.7, 'error']], draw(G, lt) {
+    { vo: `Uno se va caliente.`, d: 1.6, theme: 'red', sfx: [[.2, 'door'], [.7, 'error']], draw(G, lt) {
       G.person(330 - G.E.inOut(G.prog(lt, .2, .8)) * 600, 1050, 1.3, G.C.red);
       G.person(670, 1050, 1.3, '#E8E8F0');
       G.txt(lt, 'Uno se va *caliente.*', { y: 460, size: 104 });
     } },
-    { d: 1.8, theme: 'red', shake: 26, sfx: [[0, 'hit'], [.8, 'boom']], draw(G, lt) {
+    { vo: `Y no vuelve más.`, d: 1.8, theme: 'red', shake: 26, sfx: [[0, 'hit'], [.8, 'boom']], draw(G, lt) {
       G.cash(lt, 0, -CFG.corte, { y: 760, size: 220, dur: .5 });
       G.txt(lt, 'y no vuelve *más.*', { y: 1060, size: 110, at: .7 });
       G.cross(lt, G.CX, 1330, 90, .8);
     } },
-    { d: 1.5, sfx: [[0, 'whoosh']], draw(G, lt) {
+    { vo: `Y lo peor, no es eso.`, d: 1.5, sfx: [[0, 'whoosh']], draw(G, lt) {
       hoja(G, lt, G.CX, 1100, 1.05 + lt * .1, .02);
       G.txt(lt, 'Y lo peor *no* *es* *eso.*', { y: 330, size: 96 });
     } },
-    { d: 3.0, sfx: [[0, 'pop'], [.9, 'pop'], [1.8, 'pop']], draw(G, lt) {
+    { vo: `El cuaderno se moja, se pierde, o se lo lleva tu socio.`, d: 3.0, sfx: [[0, 'pop'], [.9, 'pop'], [1.8, 'pop']], draw(G, lt) {
       [['💦', 'Se moja.'], ['🌬️', 'Se pierde.'], ['🤷‍♂️', 'Lo tiene tu socio.']].forEach(([e, t], i) => {
         G.emoji(lt, e, 260, 560 + i * 300, 160, { at: i * .9 });
         G.txt(lt, t, { x: 380, y: 560 + i * 300, size: 84, at: i * .9 + .05, align: 'left', maxW: 600, stagger: 0 });
       });
     } },
-    { d: 3.0, theme: 'green', sfx: [[0, 'whoosh'], [1.6, 'error', .6], [2.2, 'pop']], draw(G, lt) {
+    { vo: `Ahora mi agenda está en el celu.`, d: 3.0, theme: 'green', sfx: [[0, 'whoosh'], [1.6, 'error', .6], [2.2, 'pop']], draw(G, lt) {
       G.txt(lt, 'Ahora mi agenda está en el *celu.*', { y: 290, size: 80 });
       G.phone(lt, G.CX, 1020, 1.35, (c, l) => {
         G.UI.header('Agenda · Hoy', 'Barbería Tomás');
@@ -66,11 +66,11 @@ VIDEO({
         }
       }, { at: .1 });
     } },
-    { d: 2.4, theme: 'green', sfx: [[0, 'pop'], [1.1, 'check']], draw(G, lt) {
+    { vo: `Si un horario está ocupado, nadie lo puede pisar.`, d: 2.4, theme: 'green', sfx: [[0, 'pop'], [1.1, 'check']], draw(G, lt) {
       G.stack(lt, [['Un horario ocupado', { size: 90 }], ['*no* *se* *puede* *pisar.*', { size: 100, at: .4, boxColor: G.C.green }]], { y: 760 });
       G.check(lt, G.CX, 1180, 110, 1.1);
     } },
-    { d: 2.6, theme: 'yellow', sfx: [[0, 'pop'], [.8, 'pop']], draw(G, lt) {
+    { vo: `¿Seguís con el cuaderno? Sin vergüenza, contame.`, d: 2.6, theme: 'yellow', sfx: [[0, 'pop'], [.8, 'pop']], draw(G, lt) {
       G.stack(lt, [['¿Seguís con el *cuaderno?*', { size: 100 }], ['Sin vergüenza, contame', { size: 70, at: .5, color: '#C9C9D6' }]], { y: 760 });
       G.arrowDown(lt, G.CX, 1150, .8);
       G.txt(lt, CFG.usuario, { y: 1400, size: 40, weight: 700, color: '#C9C9D6', at: 1, stagger: 0 });

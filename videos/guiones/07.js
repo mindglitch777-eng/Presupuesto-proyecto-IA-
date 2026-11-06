@@ -18,19 +18,19 @@ VIDEO({
   title: 'Martes muerto',
   theme: 'neutral',
   scenes: [
-    { d: 2.0, sfx: [[0, 'boom'], [.1, 'crowd'], [1.0, 'cricket']], draw(G, lt) { split(G, lt); G.txt(lt, '¿Te pasa *esto?*', { y: 260, size: 96 }); } },
-    { d: 1.6, theme: 'red', shake: 16, shakeDur: 1.6, sfx: [[0, 'crowd'], [0, 'hit']], draw(G, lt) {
+    { vo: `¿Te pasa esto?`, d: 2.0, sfx: [[0, 'boom'], [.1, 'crowd'], [1.0, 'cricket']], draw(G, lt) { split(G, lt); G.txt(lt, '¿Te pasa *esto?*', { y: 260, size: 96 }); } },
+    { vo: `El sábado no das abasto.`, d: 1.6, theme: 'red', shake: 16, shakeDur: 1.6, sfx: [[0, 'crowd'], [0, 'hit']], draw(G, lt) {
       split(G, lt, 12, 0, 3); G.txt(lt, 'El sábado *no* *das* *abasto.*', { y: 260, size: 86 });
     } },
-    { d: 2.0, noPunch: true, sfx: [[0, 'cricket']], draw(G, lt) {
+    { vo: `El martes mirás el techo.`, d: 2.0, noPunch: true, sfx: [[0, 'cricket']], draw(G, lt) {
       G.chair(G.CX, 1000, 1.2 + lt * .08); G.emoji(lt, '🦗', 760, 1300, 140, { bob: 6 });
       G.txt(lt, 'El martes mirás *el* *techo.*', { y: 360, size: 96 });
     } },
-    { d: 2.0, theme: 'red', shake: 20, sfx: [[0, 'whoosh'], [.5, 'hit']], draw(G, lt) {
+    { vo: `Y el alquiler lo pagás los siete días.`, d: 2.0, theme: 'red', shake: 20, sfx: [[0, 'whoosh'], [.5, 'hit']], draw(G, lt) {
       G.stack(lt, [['Y el alquiler', { size: 96 }], ['lo pagás *los* *7* *días.*', { size: 100, at: .4 }]], { y: 600 });
       G.emoji(lt, '🧾', G.CX, 1180 + (1 - G.E.out(G.prog(lt, .4, .5))) * -500, 260, { at: .4, rot: -.15 });
     } },
-    { d: 3.2, theme: 'yellow', sfx: [[0, 'whoosh'], [1.4, 'hit']], draw(G, lt) {
+    { vo: `Lo que hice: puntos dobles los martes.`, d: 3.2, theme: 'yellow', sfx: [[0, 'whoosh'], [1.4, 'hit']], draw(G, lt) {
       G.stack(lt, [['Lo que hice:', { size: 76, color: '#C9C9D6' }], ['*PUNTOS* *DOBLES* los martes.', { size: 96, at: .3 }]], { y: 360, gap: 24 });
       G.phone(lt, G.CX, 1170, 1.1, (c, l) => {
         G.UI.header('Tu tarjeta de puntos', 'Barbería Tomás');
@@ -42,7 +42,7 @@ VIDEO({
         G.qr(110, 450, 180, 4);
       }, { at: .2 });
     } },
-    { d: 2.6, theme: 'yellow', sfx: [[0, 'ticks:10:0.12'], [1.3, 'cash']], draw(G, lt) {
+    { vo: `Al décimo corte, el siguiente es gratis.`, d: 2.6, theme: 'yellow', sfx: [[0, 'ticks:10:0.12'], [1.3, 'cash']], draw(G, lt) {
       G.stack(lt, [['Al *10º* corte,', { size: 100 }], ['el siguiente es *gratis.*', { size: 96, at: .3 }]], { y: 480, gap: 24 });
       const n = Math.min(10, Math.floor(lt * 8));
       for (let i = 0; i < 10; i++) {
@@ -52,16 +52,16 @@ VIDEO({
       }
       if (lt > 1.3) G.emoji(lt, '🎁', G.CX, 1300, 140, { at: 1.3 });
     } },
-    { d: 3.0, theme: 'green', sfx: [[.2, 'whoosh'], [.7, 'whoosh'], [1.2, 'whoosh'], [2.0, 'check']], draw(G, lt) {
+    { vo: `Y los que pueden venir cualquier día, eligen martes.`, d: 3.0, theme: 'green', sfx: [[.2, 'whoosh'], [.7, 'whoosh'], [1.2, 'whoosh'], [2.0, 'check']], draw(G, lt) {
       const moved = Math.floor(G.clamp((lt - .2) / 1.5) * 5);
       split(G, lt, 12 - moved, moved, .5);
       G.txt(lt, 'Los que pueden venir cualquier día, *eligen* *martes.*', { y: 240, size: 72 });
     } },
-    { d: 2.2, theme: 'green', sfx: [[0, 'rise'], [1, 'check']], draw(G, lt) {
+    { vo: `Más parejo. Menos estrés.`, d: 2.2, theme: 'green', sfx: [[0, 'rise'], [1, 'check']], draw(G, lt) {
       split(G, lt, 7, 5, .3);
       G.txt(lt, '*Más* *parejo.* Menos estrés.', { y: 260, size: 92, boxColor: G.C.green });
     } },
-    { d: 2.4, theme: 'yellow', sfx: [[0, 'pop'], [.7, 'pop']], draw(G, lt) {
+    { vo: `¿Cuál es tu día muerto?`, d: 2.4, theme: 'yellow', sfx: [[0, 'pop'], [.7, 'pop']], draw(G, lt) {
       G.txt(lt, '¿Cuál es tu *día* *muerto?*', { y: 720, size: 104 });
       G.arrowDown(lt, G.CX, 1130, .7);
       G.txt(lt, CFG.usuario, { y: 1400, size: 40, weight: 700, color: '#C9C9D6', at: .9, stagger: 0 });

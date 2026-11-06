@@ -24,7 +24,18 @@ await page.evaluate(async () => {
   await document.fonts.load('600 40px "Inter Display"');
   await document.fonts.load('100px "Noto Color Emoji"', '💈');
 });
-const def = await page.evaluate(() => ({ frames: DEF.frames, duration: DEF.duration, sfx: DEF.sfxAll, title: DEF.title,
+// 1) narración: se genera la voz de cada escena y se alargan las escenas que lo necesiten
+const voTexts = await page.evaluate(() => DEF.scenes.map(s => s.vo || null));
+let vo = [];
+if (voTexts.some(Boolean) && !process.argv.includes('--sin-voz')) {
+  fs.writeFileSync(path.join(work, 'vo.json'), JSON.stringify(voTexts));
+  vo = JSON.parse(execFileSync('python3', [path.join(here, 'voz.py'), path.join(work, 'vo.json'), path.join(work, 'vo')]).toString().trim().split('\n').pop());
+  await page.addInitScript(d => { window.VO_DUR = d; }, vo);
+  await page.reload();
+  await page.waitForFunction(() => window.READY);
+  await page.evaluate(async () => { await document.fonts.load('900 100px "Inter Display"'); await document.fonts.load('800 100px "Inter Display"'); await document.fonts.load('600 40px "Inter Display"'); await document.fonts.load('100px "Noto Color Emoji"', '💈'); });
+}
+const def = await page.evaluate(() => ({ starts: DEF.scenes.map(s => s.start + s.voAt), frames: DEF.frames, duration: DEF.duration, sfx: DEF.sfxAll, title: DEF.title,
   scenes: DEF.scenes.map(s => ({ f0: s.f0, frames: s.frames })) }));
 
 const grab = f => page.evaluate(f => { renderFrame(f); return document.getElementById('c').toDataURL('image/jpeg', .92).split(',')[1]; }, f);
@@ -62,10 +73,12 @@ for (let i = 0; i < def.scenes.length; i++) {
 await browser.close();
 
 fs.writeFileSync(path.join(work, 'list.txt'), list.map(f => `file '${f}'`).join('\n'));
-fs.writeFileSync(path.join(work, 'sfx.json'), JSON.stringify({ duration: def.duration, events: def.sfx }));
+const voEvents = vo.map((v, i) => v && { t: def.starts[i], file: v.file }).filter(Boolean);
+fs.writeFileSync(path.join(work, 'sfx.json'), JSON.stringify({ duration: def.duration, events: def.sfx, vo: voEvents,
+  music: !process.argv.includes('--sin-musica'), variant: (parseInt(id, 10) - 1) % 4 }));
 execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', path.join(work, 'list.txt'), '-c', 'copy', path.join(work, 'video.mp4')]);
 execFileSync('python3', [path.join(here, 'sfx.py'), path.join(work, 'sfx.json'), path.join(work, 'sfx.wav')]);
-const final = path.join(out, `${id}.mp4`), tmpFinal = path.join(out, `${id}.part.mp4`);
+const final = path.join(here, '../render', `${id}.mp4`), tmpFinal = path.join(out, `${id}.part.mp4`);
 execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', path.join(work, 'video.mp4'), '-i', path.join(work, 'sfx.wav'),
   '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', tmpFinal]);
 fs.renameSync(tmpFinal, final);

@@ -229,7 +229,7 @@ Videos verticales de 1080×1920 animados con código, sin voz en off: todo se cu
 |---|---|---|---|
 | 0,0 | **"Busco 5 barberías."** | Texto gigante; 5 casilleros vacíos | Golpe |
 | 1,5 | **"No para venderles."** | Tachado de "venderles" | Pop |
-| 3,0 | "Soy un pibe de Corrientes que arma apps." | Mapa simple de Argentina con un punto que late | Barrido |
+| 3,0 | "Soy de Corrientes y armo apps." | Mapa simple de Argentina con un punto que late | Barrido |
 | 5,5 | "Todos los barberos se quejan de lo mismo:" | — | Pop |
 | 7,5 | "Me clavan." / "Contesto WhatsApp todo el día." / "No sé cuánto gano." | Tres frases golpeando una tras otra | Tres golpes |
 | 11,5 | "Así que armé esto." | Celular: recorrido rápido por agenda, fila, caja y ficha (0,8 s cada una) | Barridos rápidos |

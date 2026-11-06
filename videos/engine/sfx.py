@@ -160,9 +160,35 @@ def main(src, dst):
         if i >= len(total):
             continue
         total[i:i + len(s)] += s[: len(total) - i]
-    total = total[: int(SR * d["duration"])]
-    peak = np.max(np.abs(total)) or 1
-    total = np.tanh(total / peak * 1.4) * 0.85  # compresión suave
+    n = int(SR * d["duration"])
+    total = total[:n]
+    sfx = np.tanh(total / (np.max(np.abs(total)) or 1) * 1.4)
+
+    # narración
+    voice = np.zeros(n)
+    for v in d.get("vo", []):
+        import soundfile as sf
+        s, sr = sf.read(v["file"], dtype="float32")
+        if s.ndim > 1:
+            s = s.mean(axis=1)
+        s = np.interp(np.arange(int(len(s) * SR / sr)) * sr / SR, np.arange(len(s)), s)  # 22 kHz → 48 kHz
+        s = s / (np.max(np.abs(s)) or 1)
+        i = int(SR * v["t"])
+        voice[i:i + len(s)] += s[: max(0, n - i)]
+
+    # música por debajo, que baja cuando habla la voz (ducking)
+    if d.get("music", True):
+        from musica import render as music_render
+        music = music_render(d["duration"], d.get("variant", 0))
+        env = np.convolve(np.abs(voice), np.ones(int(SR * .08)) / int(SR * .08), mode="same")
+        duck = 1 - 0.55 * np.clip(env * 8, 0, 1)
+        music = music[:n] * duck
+    else:
+        music = np.zeros(n)
+
+    has_voice = np.max(np.abs(voice)) > 0
+    total = voice * 0.95 + music * (0.26 if has_voice else 0.45) + sfx * (0.30 if has_voice else 0.6)
+    total = np.tanh(total * 1.1) * 0.92  # limitador suave
     pcm = (total * 32767).astype(np.int16)
     st = np.stack([pcm, pcm], axis=1)
     with wave.open(dst, "wb") as w:
