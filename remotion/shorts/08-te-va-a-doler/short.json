@@ -1,0 +1,158 @@
+{
+  "id": "08-te-va-a-doler",
+  "title": "Si sos barbero, este video te va a doler",
+  "feature": "Todo junto: seña, fila virtual y clientes que no volvieron. Precio mensual de la app",
+  "belief_broken": "Que una app de gestión es un gasto caro. Giro: lo que frena las pérdidas sale lo mismo que un solo corte.",
+  "fiction": true,
+  "sources": [
+    "Las tres pérdidas son una cuenta de ejemplo con los montos de videos/config.js: 2 clientes que te clavan por semana (8 por mes), 1 que se va de la fila por día de trabajo (24 por mes) y 3 clientes que no volvieron (2 cortes por mes cada uno). En pantalla, chico: 'Ejemplo con corte a $10.000'."
+  ],
+  "direction": {
+    "concept": "Una calculadora 3D gigante, como un monstruo, que va escupiendo números rojos y crece con cada cuenta hasta tapar la barbería. En el giro, del otro lado de una balanza aparece algo chiquito: una sola tijera, un corte. La balanza se equilibra contra la montaña de plata y la calculadora estalla.",
+    "look": "Oscuro con rojo y amarillo industrial (como un cartel de peligro): cinta de 'PELIGRO', luces giratorias, chispas. La calculadora 3D tiene teclas que se hunden con cada número. Después del giro, verde y dorado.",
+    "pacing": "Cada línea de la cuenta es un golpe más fuerte que el anterior; la calculadora crece; el total tiembla; silencio; el giro es la balanza. El cierre te pide tus números.",
+    "loop": "El último cuadro vuelve al vidrio que se rompe con 'ESTE VIDEO TE VA A DOLER', igual que el cuadro 0. 'Aunque duela' empalma con 'este video te va a doler'."
+  },
+  "music": {
+    "style": "Industrial/phonk: 808 distorsionado, metales golpeados, alarma de fondo; en el giro, todo se frena y entra un acorde enorme en mayor; al final, phonk brillante.",
+    "tempo": "140 BPM.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Vidrio que se rompe + golpe"
+      },
+      {
+        "at": "escenas 2-7",
+        "cue": "Phonk industrial; tecla gigante en cada número"
+      },
+      {
+        "at": "escena 7",
+        "cue": "Alarma que se corta: 0,4 s de silencio"
+      },
+      {
+        "at": "escena 8 (giro)",
+        "cue": "Clang de la balanza + acorde mayor"
+      },
+      {
+        "at": "escenas 9-10",
+        "cue": "Phonk brillante"
+      }
+    ],
+    "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS, pico ≤ −1 dBTP."
+  },
+  "packaging": {
+    "title": "Si sos barbero, este video te va a doler",
+    "cover": "HACÉ LA CUENTA",
+    "caption": "Hacé la cuenta y después decime 🧮 Ejemplo con corte a $10.000.",
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#emprendedores"
+    ],
+    "pinned": "Pasame cuántos te clavan por semana y te hago la cuenta."
+  },
+  "scenes": [
+    {
+      "beat": "hook",
+      "reward": "challenge",
+      "say": "Si sos barbero, este video te va a doler. Hacé la cuenta.",
+      "onScreen": "ESTE VIDEO\n*TE VA A DOLER*",
+      "visual": "Cuadro 0 en acción: la pantalla ya se está rompiendo como un vidrio desde el centro; el texto aparece en las grietas; luces de alarma giran.",
+      "camera": "Sacudón fuerte con cada grieta.",
+      "transition": "Los pedazos de vidrio caen y revelan una calculadora 3D gigante.",
+      "sfx": "Vidrio que se rompe; golpe grave en 'doler'."
+    },
+    {
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Arrancamos. Te clavan dos por semana.",
+      "onScreen": "TE CLAVAN\n*2 POR SEMANA*",
+      "visual": "Dos sillas vacías 3D caen del techo sobre las teclas de la calculadora y las hunden.",
+      "camera": "Contrapicado a las sillas que caen.",
+      "transition": "La pantalla de la calculadora se prende.",
+      "sfx": "Dos golpes de sillas; tecla gigante."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "{$corte*8} por mes.",
+      "onScreen": "*{$corte*8}*",
+      "visual": "La pantalla de la calculadora escupe −{$corte*8} en rojo con chispas; la calculadora crece un poco.",
+      "camera": "Push in a la pantalla de la calculadora.",
+      "transition": "Zoom-blur.",
+      "sfx": "Tics; error; tecla."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Se te va uno de la fila por día. {$corte*24} más.",
+      "onScreen": "*{$corte*24}*\nMÁS",
+      "visual": "Una fila de siluetas sale por la puerta en una cinta transportadora; la calculadora crece otra vez y tapa media barbería.",
+      "camera": "Seguimiento lateral de la cinta; zoom out para mostrar el tamaño de la calculadora.",
+      "transition": "La calculadora golpea el techo.",
+      "sfx": "Cinta transportadora; golpe metálico."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Tres clientes que no volvieron: {$corte*6}.",
+      "onScreen": "*{$corte*6}*",
+      "visual": "Tres carteles de 'NO VOLVIÓ' caen sobre las teclas; la calculadora rompe el techo y sale para afuera.",
+      "camera": "Grúa que sube con la calculadora a través del techo.",
+      "transition": "Polvo y escombros.",
+      "sfx": "Tres golpes; techo que se rompe."
+    },
+    {
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Total: {$corte*38} por mes. Sin contar las horas en WhatsApp.",
+      "onScreen": "*{$corte*38}*\nPOR MES",
+      "pause_after": 0.4,
+      "visual": "La raya del total se dibuja como un rayo; −{$corte*38} gigante en rojo tiembla sobre la ciudad; la calculadora monstruo ruge. Un globo de chat chiquito pasa flotando (las horas en WhatsApp).",
+      "camera": "Plano general de la calculadora sobre la ciudad; quietud total en el silencio.",
+      "transition": "Corte de alarma: 0,4 s de silencio.",
+      "sfx": "Rayo; golpe grave + rugido; la alarma se corta."
+    },
+    {
+      "beat": "twist",
+      "reward": "twist",
+      "say": "¿Y sabés cuánto sale lo que frena todo esto? Un corte.",
+      "onScreen": "SALE\n*UN CORTE*",
+      "visual": "LA IMAGEN MÁS FUERTE: aparece una balanza 3D gigante. En un plato, la montaña de −{$corte*38}; en el otro cae una sola tijera chiquita y brillante. La balanza oscila y queda EQUILIBRADA. La calculadora monstruo estalla en mil teclas que llueven.",
+      "camera": "Plano general de la balanza; en 'un corte', zoom de golpe a la tijera.",
+      "transition": "Las teclas que llueven forman la pantalla de un celular.",
+      "sfx": "Clang de la balanza; explosión de teclas; acorde mayor."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "{$mensual} por mes. Seña, fila virtual y los que no volvieron.",
+      "onScreen": "*{$mensual}*\nPOR MES",
+      "visual": "Celular 3D que pasa rápido por tres pantallas (0,8 s cada una): seña de {$sena}, 'Vas 2º en la fila', 'Juan · 63 días'. Arriba, la etiqueta de precio {$mensual}.",
+      "camera": "El celular gira en cada pantalla.",
+      "transition": "Pantalla partida.",
+      "sfx": "Tres whoosh; caja registradora en el precio."
+    },
+    {
+      "beat": "payoff",
+      "reward": "contrast",
+      "say": "Si te recupera un solo corte, ya está pagada.",
+      "onScreen": "UN CORTE\n*Y ESTÁ PAGADA*",
+      "visual": "Pantalla partida: izquierda, la montaña roja de pérdidas; derecha, una tijera y un tilde verde. El tilde crece y empuja la montaña fuera de cuadro.",
+      "camera": "Gana la derecha.",
+      "transition": "Slide verde.",
+      "sfx": "Rayo; tilde."
+    },
+    {
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Poné tus números en los comentarios y te hago la cuenta. Comentá BARBER. Aunque duela.",
+      "onScreen": "COMENTÁ\n*BARBER*",
+      "visual": "Teclado de calculadora donde se escribe BARBER con las teclas; abajo, chico: 'Ejemplo con corte a {$corte}'. En los últimos 6 cuadros la pantalla empieza a romperse como vidrio, igual que el cuadro 0.",
+      "camera": "Termina en el plano del cuadro 0.",
+      "transition": "Corte en seco al inicio (loop).",
+      "sfx": "Teclas; el vidrio del inicio se rompe justo en el corte."
+    }
+  ]
+}

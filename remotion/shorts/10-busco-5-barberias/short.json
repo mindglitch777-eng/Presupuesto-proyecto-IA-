@@ -1,0 +1,126 @@
+{
+  "id": "10-busco-5-barberias",
+  "title": "Busco 5 barberías",
+  "feature": "Convocatoria a probar el prototipo: turnos con seña, fila con QR, caja del día, ficha de cliente",
+  "belief_broken": "Que todo video de una app es para venderte algo. Giro: el video se delata; no busca clientes, busca 5 barberos que digan qué le falta.",
+  "fiction": false,
+  "sources": ["El creador es de Corrientes y arma aplicaciones (dato del dueño). Precio fundador, prueba gratis y congelamiento salen de videos/config.js y GUIONES.md. No hay testimonios."],
+  "direction": {
+    "concept": "Una convocatoria tipo casting de programa de TV: escenario oscuro, cinco sillones de barbero 3D dorados en fila, todos vacíos, con un reflector arriba de cada uno. El video arranca como si te vendiera algo (precio, oferta) y en el giro corta la 'publicidad': el cartel de OFERTA se cae, se apagan las luces de show y queda una sola luz honesta: 'Busco 5 barberos que me digan qué le falta'.",
+    "look": "Escenario de casting: negro profundo, reflectores, humo, dorado. Los sillones son 3D cromados y dorados. Cuando el video 'se delata', el brillo de publicidad se apaga y queda un look más crudo y honesto, con una sola luz cálida.",
+    "pacing": "Arranque de show (golpes, luces); el recorrido por la app a toda velocidad; el giro es un apagón con un solo reflector; final con los sillones iluminándose de a uno.",
+    "loop": "El último cuadro vuelve a los 5 sillones vacíos bajo los reflectores, igual que el cuadro 0. 'Quedan cinco lugares' empalma con 'Busco cinco barberías'."
+  },
+  "music": {
+    "style": "Trap épico con cuerdas y coro sintéticos (tráiler de casting); en el giro, se corta con un disco que se raya y queda un piano íntimo; al final, vuelve el trap con los sillones prendiéndose.",
+    "tempo": "140 BPM (medio tiempo).",
+    "sections": [
+      { "at": "escena 1", "cue": "Golpe + reflectores que se prenden" },
+      { "at": "escenas 2-6", "cue": "Trap épico; whoosh en cada pantalla de la app" },
+      { "at": "escena 6", "cue": "Disco rayado: 0,4 s de silencio" },
+      { "at": "escena 7 (giro)", "cue": "Piano íntimo" },
+      { "at": "escenas 8-10", "cue": "El trap vuelve; golpe en cada sillón" }
+    ],
+    "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS, pico ≤ −1 dBTP."
+  },
+  "packaging": {
+    "title": "Busco 5 barberías (y no es para venderles)",
+    "cover": "QUEDAN 5 LUGARES",
+    "caption": "Si tenés barbería, leé esto 👀 Es un prototipo: lo armamos con vos.",
+    "hashtags": ["#barberia", "#barbero", "#barberiaargentina", "#corrientes"],
+    "pinned": "Quedan 5 lugares. Comentá BARBER y te escribo."
+  },
+  "scenes": [
+    {
+      "beat": "hook", "reward": "paradox",
+      "say": "Busco cinco barberías. Y no es para venderles. ¿Para qué?",
+      "onScreen": "BUSCO\n*5 BARBERÍAS*",
+      "visual": "Cuadro 0 en acción: cinco reflectores ya se están prendiendo uno tras otro sobre cinco sillones de barbero dorados 3D, vacíos, en un escenario con humo.",
+      "camera": "Travelling lateral por los cinco sillones; en '¿para qué?', frena en el del medio.",
+      "transition": "Barrido de luz de reflector.",
+      "sfx": "Cinco golpes de reflector; golpe grave en 'venderles'."
+    },
+    {
+      "beat": "reward", "reward": "reveal",
+      "say": "Soy de Corrientes y armo aplicaciones.",
+      "onScreen": "CORRIENTES,\n*ARGENTINA*",
+      "visual": "Un mapa 3D de Argentina sale del piso del escenario y gira; un punto late en Corrientes y lanza un rayo de luz hacia arriba.",
+      "camera": "Cenital del mapa que se convierte en plano frontal.",
+      "transition": "El rayo de luz sube y corta a la siguiente escena.",
+      "sfx": "Whoosh; latido del punto."
+    },
+    {
+      "beat": "reward", "reward": "challenge",
+      "say": "Si sos barbero, seguro te suena esto.",
+      "onScreen": "SEGURO\n*TE SUENA*",
+      "visual": "Tres carteles de neón apagados cuelgan sobre el escenario, esperando prenderse.",
+      "camera": "Contrapicado a los carteles.",
+      "transition": "Se prende el primer neón.",
+      "sfx": "Zumbido de neón."
+    },
+    {
+      "beat": "reward", "reward": "consequence",
+      "say": "Te clavan. Contestás mensajes todo el día. No sabés cuánto ganás.",
+      "onScreen": "*TE CLAVAN.*",
+      "visual": "Los tres neones se prenden de golpe, uno por frase: 'TE CLAVAN' con una silla vacía, 'MENSAJES' con globos que caen, '¿CUÁNTO GANO?' con un cajón vacío. Cada uno con un sacudón.",
+      "camera": "Un plano por neón; sacudón en cada uno.",
+      "transition": "Los neones hacen cortocircuito y sueltan chispas.",
+      "sfx": "Tres golpes con zumbido eléctrico; chispas."
+    },
+    {
+      "beat": "reward", "reward": "reveal",
+      "say": "Así que armé esto: turnos con seña, fila con QR, caja y ficha de cada cliente.",
+      "onScreen": "ASÍ QUE\n*ARMÉ ESTO*",
+      "visual": "Un celular 3D cae del techo y gira mientras pasa a toda velocidad por cuatro pantallas (0,7 s cada una): seña {$sena}, 'Vas 2º', caja del día, ficha de Lucas.",
+      "camera": "Órbita alrededor del celular que gira.",
+      "transition": "Aparece un cartel de OFERTA brillante (engaño: parece publicidad).",
+      "sfx": "Cuatro whoosh; pop en cada pantalla."
+    },
+    {
+      "beat": "reward", "reward": "humor",
+      "say": "Y acá viene la oferta, el precio, el 'aprovechá'…",
+      "onScreen": "*¡OFERTA!*",
+      "pause_after": 0.4,
+      "visual": "Un cartel de OFERTA exagerado, con estrellas que giran, flechas, brillos y un precio tachado, todo demasiado brillante y falso.",
+      "camera": "Zoom rápido de publicidad de TV.",
+      "transition": "Disco rayado: el cartel se cae y todo se apaga (0,4 s de negro).",
+      "sfx": "Jingle de publicidad exagerado; disco rayado; silencio."
+    },
+    {
+      "beat": "twist", "reward": "twist",
+      "say": "No. Todavía es un prototipo. Busco cinco barberos que me digan qué le falta.",
+      "onScreen": "¿QUÉ\n*LE FALTA?*",
+      "visual": "LA IMAGEN MÁS FUERTE: en la oscuridad, el cartel de OFERTA cae al piso en cámara lenta y se rompe en pedazos dorados. Se apagan todas las luces de show; queda un solo reflector cálido sobre un sillón vacío. Los pedazos del cartel flotan y forman un signo de pregunta 3D gigante.",
+      "camera": "Plano general en penumbra; push in lento al sillón iluminado.",
+      "transition": "El signo de pregunta se transforma en un número 14.",
+      "sfx": "Vidrio dorado que se rompe en cámara lenta; piano íntimo."
+    },
+    {
+      "beat": "reward", "reward": "number",
+      "say": "Las cinco primeras lo prueban gratis {#diasPrueba} días.",
+      "onScreen": "*{#diasPrueba} DÍAS*\nGRATIS",
+      "visual": "Un calendario 3D pasa {#diasPrueba} hojas que vuelan como pájaros.",
+      "camera": "Las hojas vuelan hacia la cámara.",
+      "transition": "La última hoja se convierte en una etiqueta de precio.",
+      "sfx": "Hojas en ráfaga; golpe."
+    },
+    {
+      "beat": "payoff", "reward": "contrast",
+      "say": "Si les sirve, {$fundador} por mes, congelado seis meses. Si no, no pagan nada.",
+      "onScreen": "*{$fundador}*\nO NADA",
+      "visual": "Pantalla partida con rayo: izquierda, etiqueta {$fundador} con un candado de hielo 'CONGELADO 6 MESES'; derecha, un $0 con tilde verde. Las dos mitades brillan.",
+      "camera": "Las mitades entran desde los costados y chocan en el medio.",
+      "transition": "Los cinco sillones vuelven a aparecer detrás.",
+      "sfx": "Rayo; hielo que cruje; tilde."
+    },
+    {
+      "beat": "loop", "reward": "challenge",
+      "say": "Comentá BARBER y te escribo. Quedan cinco lugares.",
+      "onScreen": "COMENTÁ\n*BARBER*",
+      "visual": "BARBER gigante sobre el escenario; los cinco sillones dorados laten esperando. En los últimos 6 cuadros las luces bajan y quedan los 5 sillones vacíos bajo los reflectores, igual que el cuadro 0.",
+      "camera": "Termina en el plano del cuadro 0.",
+      "transition": "Corte en seco al inicio (loop).",
+      "sfx": "El primer golpe de reflector del inicio justo en el corte."
+    }
+  ]
+}

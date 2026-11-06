@@ -1,0 +1,158 @@
+{
+  "id": "02-barbero-o-secretario",
+  "title": "8 cortes, 47 mensajes",
+  "feature": "Link de reservas: el cliente elige el horario solo",
+  "belief_broken": "Que contestar rápido los mensajes es atender bien. Giro: el video se delata; metió tres notificaciones falsas arriba y te sacó la vista igual que te la sacan mientras cortás.",
+  "fiction": false,
+  "sources": [
+    "47 mensajes y 2 horas por día son una situación de ejemplo, no un dato medido. Se muestran como ejemplo."
+  ],
+  "direction": {
+    "concept": "El video entero pasa adentro de un chat que se vuelve loco. En las escenas 2, 3 y 5 aparece una notificación falsa arriba de todo, como las de verdad. En el giro, el video congela la imagen y las señala: 'eran del video'. La cámara sale para atrás y se ve que todo estaba pasando adentro de un celular, en la mano con gel de un barbero.",
+    "look": "Interfaz de chat genérica (sin logos) con GLITCH: verde neón, negro, globos 3D que caen con física y se apilan hasta tapar la pantalla. Después del giro, todo se ordena: grilla limpia de horarios en violeta y blanco.",
+    "pacing": "Caótico y acelerado hasta el giro (vibraciones, globos cayendo cada medio segundo); congelado total en el giro; después, todo calmo y prolijo, con golpes limpios.",
+    "loop": "El último cuadro es el chat vacío con el primer globo '¿tenés turno?' entrando, igual que el cuadro 0. 'Antes de los próximos cuarenta y siete…' empalma con 'Ocho cortes. Cuarenta y siete mensajes.'"
+  },
+  "music": {
+    "style": "Hyperpop glitch: arpegios rápidos, bajos distorsionados, cortes de cinta. Después del giro, lo-fi tranquilo con un bombo firme.",
+    "tempo": "150 BPM caótico; 90 BPM después del giro.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Vibración en ráfaga + golpe"
+      },
+      {
+        "at": "escenas 2-5",
+        "cue": "Hyperpop; un 'ding' de mensaje en cada globo"
+      },
+      {
+        "at": "escena 5",
+        "cue": "Tape stop: la música se frena y queda 0,4 s de silencio"
+      },
+      {
+        "at": "escena 6 (giro)",
+        "cue": "Rebobinado de cinta mientras el video se delata"
+      },
+      {
+        "at": "escenas 7-10",
+        "cue": "Lo-fi limpio; pop en cada toque"
+      }
+    ],
+    "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS, pico ≤ −1 dBTP."
+  },
+  "packaging": {
+    "title": "8 cortes, 47 mensajes: ¿barbero o secretario?",
+    "cover": "¿BARBERO O SECRETARIO?",
+    "caption": "Barbero o recepcionista, elegí 📱✂️",
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#emprendedor"
+    ],
+    "pinned": "Comentá BARBER y te paso el link de prueba."
+  },
+  "scenes": [
+    {
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "Ocho cortes. Cuarenta y siete mensajes. ¿Sos barbero o secretario?",
+      "onScreen": "8 CORTES.\n*47 MENSAJES.*",
+      "visual": "Cuadro 0 en acción: un globo de chat '¿tenés turno?' ya está cayendo; detrás, una ráfaga de globos 3D cae y rebota. El número 8 entra chico y el 47 entra GIGANTE y empuja al 8 fuera de la pantalla.",
+      "camera": "Plano frontal; en 'secretario', sacudón y zoom a una corbata de secretario que aparece sobre un delantal de barbero.",
+      "transition": "Los globos caen y tapan la pantalla (wipe hacia abajo).",
+      "sfx": "Vibración en ráfaga; golpe en '47'; 'ding' en 'secretario'."
+    },
+    {
+      "beat": "reward",
+      "reward": "humor",
+      "say": "¿Tenés turno? ¿A qué hora? ¿Y mañana? ¿Y pasado?",
+      "onScreen": "¿TENÉS TURNO?",
+      "visual": "Cada pregunta es un globo 3D que cae y se apila; al cuarto la pila se derrumba sobre una tijera. NOTIFICACIÓN FALSA 1 arriba de todo: 'Nuevo mensaje: ¿hay lugar hoy?'.",
+      "camera": "Cortes de 0,7 s con cada pregunta, cada una desde otro ángulo.",
+      "transition": "Glitch RGB de 3 cuadros.",
+      "sfx": "'Ding' por globo, cada uno más agudo; derrumbe de la pila."
+    },
+    {
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Contestás con la mano llena de gel. Y el celu se te escapa.",
+      "onScreen": "CON LA MANO\n*LLENA DE GEL*",
+      "visual": "Una mano 3D chorreando gel brillante intenta tocar la pantalla; el celular resbala, gira en el aire y cae dando vueltas. NOTIFICACIÓN FALSA 2 arriba: 'Nuevo mensaje: ¿cuánto sale?'.",
+      "camera": "Cámara lenta siguiendo el celular que cae; vuelve a velocidad normal en el golpe.",
+      "transition": "El celular cae 'a través' de la pantalla hacia la escena siguiente.",
+      "sfx": "Squish de gel; whoosh de caída; golpe contra el piso."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Dos horas por día. Sesenta horas por mes. Contestando.",
+      "onScreen": "*60 HORAS*\nPOR MES",
+      "visual": "Un reloj de arena 3D gigante hecho de globos de chat que caen en vez de arena; el contador sube de 0 a 60 horas y el reloj se llena hasta reventar.",
+      "camera": "Contrapicado al reloj de arena; en 'contestando', se inclina.",
+      "transition": "El reloj de arena se rompe y los globos salen disparados.",
+      "sfx": "Tics que aceleran; vidrio que cruje."
+    },
+    {
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Y el de la silla te mira por el espejo. Con media cabeza hecha.",
+      "onScreen": "*MEDIA CABEZA*\nHECHA",
+      "visual": "Reflejo en el espejo: el cliente con media cabeza rapada y la otra mitad peluda, mirándote fijo con una ceja levantada; un globo de chat le tapa la cara justo a la mitad.",
+      "camera": "Plano por encima del hombro hacia el espejo; zoom lento a la ceja.",
+      "transition": "El espejo se raja y el pedazo cae.",
+      "sfx": "Silencio de medio segundo y un 'ejem'; vidrio que se raja."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Y el que escribió primero ya reservó en otra barbería.",
+      "onScreen": "YA RESERVÓ\n*EN OTRA*",
+      "pause_after": 0.4,
+      "visual": "El último globo dice 'ya fue, gracias' y se rompe como vidrio. Por la ventana se ve el cartel genérico de otra barbería con una persona entrando. NOTIFICACIÓN FALSA 3 arriba: 'Nuevo mensaje: ¿estás?'.",
+      "camera": "Pan rápido hacia la ventana; congelado en el silencio.",
+      "transition": "Congelado de imagen con borde de video pausado.",
+      "sfx": "Globo que se rompe; error; tape stop y silencio."
+    },
+    {
+      "beat": "twist",
+      "reward": "twist",
+      "say": "Esperá. ¿Viste las tres notificaciones de arriba? Eran del video. Te distrajeron igual.",
+      "onScreen": "ERAN\n*DEL VIDEO*",
+      "visual": "LA IMAGEN MÁS FUERTE: el video se rebobina en cámara rápida y tres círculos rojos marcan las notificaciones falsas en las escenas 2, 3 y 5. Después la cámara sale para atrás en un solo movimiento: todo el video estaba adentro de un celular en la mano con gel de un barbero que tiene un cliente a medio cortar.",
+      "camera": "Rebobinado; después, un gran alejamiento que atraviesa la pantalla del celular.",
+      "transition": "La pantalla del celular se apaga y vuelve a prenderse limpia.",
+      "sfx": "Rebobinado de cinta; tres golpes secos en cada círculo; braam al salir."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Ahora imaginá un link en tu Instagram. El cliente elige el horario solo.",
+      "onScreen": "EL CLIENTE\n*ELIGE SOLO*",
+      "visual": "Celular 3D limpio, violeta y blanco: la grilla de horarios libres; un dedo toca 'Jueves 18:30', el turno queda confirmado con un tilde que explota en partículas.",
+      "camera": "El celular gira de perfil a frente; push in a la grilla.",
+      "transition": "La pantalla se divide al medio (pantalla partida).",
+      "sfx": "Pop en el toque; tilde brillante."
+    },
+    {
+      "beat": "payoff",
+      "reward": "contrast",
+      "say": "Sin link: cuarenta y siete mensajes. Con link: tres. Y vos, con la tijera.",
+      "onScreen": "*47* vs *3*",
+      "visual": "Pantalla partida: a la izquierda la montaña de globos que tiembla y un barbero tapado; a la derecha, tres globitos y un barbero cortando tranquilo. El 47 se derrite hasta convertirse en 3. Al final, la tijera 3D cromada gira en el centro del lado derecho con un brillo.",
+      "camera": "La línea del medio se corre hacia la izquierda y aplasta la montaña.",
+      "transition": "Slide del lado derecho que ocupa todo.",
+      "sfx": "Rayo en 'con link'; caída de tono en el 47 que se derrite."
+    },
+    {
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Comentá BARBER y te paso el link. Antes de los próximos cuarenta y siete…",
+      "onScreen": "COMENTÁ\n*BARBER*",
+      "visual": "BARBER latiendo con confeti violeta; en los últimos 6 cuadros la pantalla vuelve al chat vacío y entra el primer globo '¿tenés turno?', igual que el cuadro 0.",
+      "camera": "Termina en el plano del cuadro 0.",
+      "transition": "Corte en seco al inicio (loop).",
+      "sfx": "Pop en BARBER; la vibración del inicio arranca justo en el corte."
+    }
+  ]
+}

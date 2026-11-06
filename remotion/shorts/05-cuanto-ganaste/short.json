@@ -1,0 +1,162 @@
+{
+  "id": "05-cuanto-ganaste",
+  "title": "¿Cuánto ganaste el mes pasado?",
+  "feature": "Caja del día: cada corte con un toque, efectivo o transferencia",
+  "belief_broken": "Que la pregunta importante es cuánto ganaste. Giro: la pregunta era cuánto se te escapó sin anotar.",
+  "fiction": false,
+  "sources": [
+    "El corte sin anotar por día es un ejemplo; el monto sale de videos/config.js (30 cortes)."
+  ],
+  "direction": {
+    "concept": "Un concurso de TV donde el concursante sos vos. Luces, cuenta regresiva, chicharra. Perdés. En el giro, el estudio se apaga y una máquina de rayos X atraviesa el cajón de la plata: se ven agujeros por donde se escapan billetes que nunca se anotaron. Después, la caja del día ordena todo.",
+    "look": "Show de TV brillante: escenario con luces que corren, colores dorado, magenta y azul eléctrico, confeti. En el giro, rayos X: fondo negro y todo en cian translúcido. Al final, verde.",
+    "pacing": "Show acelerado con aplausos y cuenta regresiva; silencio y apagón antes del giro; rayos X en cámara lenta; final de premio.",
+    "loop": "El último cuadro vuelve al escenario con el reloj en 3, igual que el cuadro 0. 'Respondé en tres segundos: ¿cuánto ganaste…' empalma con el gancho."
+  },
+  "music": {
+    "style": "Jingle de concurso de TV (metales sintéticos, redoblante); chicharra de error; en el giro, drone de rayos X con latido; al final, fanfarria de premio.",
+    "tempo": "120 BPM.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Jingle de entrada + redoblante"
+      },
+      {
+        "at": "escena 2",
+        "cue": "Tres tics de reloj"
+      },
+      {
+        "at": "escena 3",
+        "cue": "Chicharra + risas del público"
+      },
+      {
+        "at": "escena 6",
+        "cue": "Apagón: 0,4 s de silencio"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Zumbido de rayos X + latido"
+      },
+      {
+        "at": "escenas 8-10",
+        "cue": "Fanfarria de premio"
+      }
+    ],
+    "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS, pico ≤ −1 dBTP."
+  },
+  "packaging": {
+    "title": "¿Cuánto ganaste en octubre? Tenés 3 segundos",
+    "cover": "SIN MIRAR",
+    "caption": "Lo que no se anota, no existe 💸 Ejemplo con corte a $10.000.",
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#emprendedores"
+    ],
+    "pinned": "Comentá BARBER y te la paso para probar."
+  },
+  "scenes": [
+    {
+      "beat": "hook",
+      "reward": "challenge",
+      "say": "¿Cuánto ganaste el mes pasado? Sin mirar. Tenés tres segundos.",
+      "onScreen": "¿CUÁNTO GANASTE?\n*SIN MIRAR*",
+      "visual": "Cuadro 0 en acción: las luces del estudio de TV ya están corriendo; un atril de concursante con un botón rojo; un reloj gigante se pone en 3.",
+      "camera": "Grúa que baja rápido desde el techo del estudio hasta el atril.",
+      "transition": "El reloj llena la pantalla (zoom).",
+      "sfx": "Jingle de entrada; redoblante; golpe en 'sin mirar'."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Tres. Dos. Uno.",
+      "onScreen": "*3 · 2 · 1*",
+      "visual": "Números 3D enormes que caen uno por uno y se rompen contra el piso del estudio.",
+      "camera": "Un plano por número, cada uno más cerca.",
+      "transition": "El 1 explota en luces.",
+      "sfx": "Tres tics de reloj cada vez más graves."
+    },
+    {
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Tiempo. ¿Ibas a decir 'más o menos'?",
+      "onScreen": "¿*MÁS O MENOS*?",
+      "visual": "Chicharra, luz roja; un cartel de respuesta 'MÁS O MENOS' aparece con una cruz gigante; el público de siluetas se ríe.",
+      "camera": "Plano del atril; corte al público.",
+      "transition": "La cruz roja barre la pantalla.",
+      "sfx": "Chicharra; risas del público."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Efectivo en el cajón. Transferencias. Billeteras. Y el resto, de memoria.",
+      "onScreen": "Y EL RESTO,\n*DE MEMORIA*",
+      "visual": "Una ruleta de concurso gira con los casilleros: EFECTIVO, TRANSFERENCIA, BILLETERA, ¿?; la flecha cae en '¿?' y la cabeza del concursante se llena de papelitos que se le escapan.",
+      "camera": "Cenital de la ruleta; corte a la cabeza.",
+      "transition": "La ruleta sale girando de cuadro.",
+      "sfx": "Ruleta con tics; 'puf' de papelitos."
+    },
+    {
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Pagás el alquiler. Y te preguntás: ¿dónde está la plata?",
+      "onScreen": "¿DÓNDE ESTÁ\n*LA PLATA?*",
+      "visual": "Una factura de alquiler 3D cae y aplasta el atril; el concursante abre el cajón y sale una polilla volando.",
+      "camera": "Contrapicado a la factura que cae; zoom al cajón.",
+      "transition": "La polilla vuela hacia la cámara.",
+      "sfx": "Golpe grave; aleteo de polilla."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Un corte sin anotar por día. {$corte*30} por mes.",
+      "onScreen": "*{$corte*30}*\nPOR MES",
+      "pause_after": 0.4,
+      "visual": "En la pantalla grande del estudio, el contador rojo baja hasta −{$corte*30}; las luces se apagan una por una hasta el apagón total.",
+      "camera": "Push in a la pantalla grande.",
+      "transition": "Apagón del estudio (0,4 s de negro).",
+      "sfx": "Tics; golpe grave; luces que se apagan de a una; silencio."
+    },
+    {
+      "beat": "twist",
+      "reward": "twist",
+      "say": "La pregunta no era cuánto ganaste. Era cuánto se te escapó.",
+      "onScreen": "¿CUÁNTO\n*SE TE ESCAPÓ?*",
+      "visual": "LA IMAGEN MÁS FUERTE: en la oscuridad, un escáner de rayos X recorre el cajón 3D: se vuelve cian translúcido y se ven agujeros en el fondo por donde caen billetes fantasma, uno tras otro, hacia el vacío. Un latido hace vibrar la imagen.",
+      "camera": "La cámara atraviesa el fondo del cajón y cae junto con los billetes.",
+      "transition": "Los billetes que caen aterrizan en la pantalla de un celular.",
+      "sfx": "Zumbido de rayos X; latido; billetes que caen con eco."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Ahora: cada corte, un toque. Efectivo o transferencia. Queda anotado.",
+      "onScreen": "CADA CORTE,\n*UN TOQUE*",
+      "visual": "Celular 3D con la caja del día: un dedo toca '+ Corte · Efectivo' y '+ Corte · Transferencia'; cada toque suma una fila con un pop y una monedita que entra al celu.",
+      "camera": "El celular gira; push in a los botones.",
+      "transition": "La lista sube y se vuelve el cierre del día.",
+      "sfx": "Pop por toque; moneda."
+    },
+    {
+      "beat": "payoff",
+      "reward": "data",
+      "say": "Y al cerrar: cuántos cortes, cuánta plata, qué día rinde. Números en la mano.",
+      "onScreen": "*QUÉ DÍA*\nRINDE",
+      "visual": "Pantalla de cierre del día: cortes, total en verde y un gráfico de barras por día de la semana que crece con resortes; el sábado y el martes se marcan.",
+      "camera": "Barras que crecen desde abajo; la cámara sube con la más alta.",
+      "transition": "Pantalla partida.",
+      "sfx": "Barras que suben con 'blip'; caja registradora."
+    },
+    {
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Comentá BARBER. Y la próxima, en tres segundos: ¿cuánto ganaste…",
+      "onScreen": "COMENTÁ\n*BARBER*",
+      "visual": "BARBER en la pantalla gigante del estudio con luces que corren; en los últimos 6 cuadros, el reloj vuelve a 3 en el atril, igual que el cuadro 0.",
+      "camera": "Termina en el plano del cuadro 0.",
+      "transition": "Corte en seco al inicio (loop).",
+      "sfx": "El redoblante del inicio arranca justo en el corte."
+    }
+  ]
+}

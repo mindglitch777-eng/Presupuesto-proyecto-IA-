@@ -1,0 +1,159 @@
+{
+  "id": "07-tu-peor-dia",
+  "title": "Tu peor día no es el martes",
+  "feature": "Tarjeta de puntos (con puntos dobles los días flojos) + turnos online",
+  "belief_broken": "Que el sábado lleno salva la semana y el martes vacío es el problema. Giro: el sábado explotado es el que te espanta clientes.",
+  "fiction": true,
+  "sources": [
+    "Los 4 clientes que se van por sábado son un ejemplo; el monto sale de videos/config.js.",
+    "VERIFICAR: que la tarjeta de puntos del prototipo permita puntos dobles por día. Si no, cambiar la escena 8 por 'Los martes, un premio extra'."
+  ],
+  "direction": {
+    "concept": "La semana es una montaña rusa 3D: un carrito con clientes sube hasta el pico del sábado y cae al valle vacío del martes. El video te hace creer que el problema es el valle. En el giro, el carrito se descarrila justo en el pico del sábado y los clientes salen volando fuera del parque. Después, la tarjeta de puntos aplana la montaña: el recorrido queda parejo.",
+    "look": "Parque de diversiones de noche con luces de neón (amarillo, magenta, cian), carteles de feria y fuegos artificiales. El martes es un parque abandonado con un grillo. Montaña rusa en 3D (@remotion/three).",
+    "pacing": "Subidas lentas con tensión y bajadas a toda velocidad; un pico y un valle cada 2 s; el giro es el descarrilamiento en cámara lenta; el final es un paseo parejo y alegre.",
+    "loop": "El último cuadro vuelve a la vista de la montaña rusa con el carrito arrancando la subida, igual que el cuadro 0. 'Tu peor día…' empalma con 'Tu peor día de la semana no es el martes.'"
+  },
+  "music": {
+    "style": "Organito de feria sintetizado sobre un beat de house; en el valle del martes, solo grillo y viento; en el giro, el organito se descarrila (tono que cae) y braam; al final, house en mayor.",
+    "tempo": "124 BPM.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Clac-clac de la subida + golpe"
+      },
+      {
+        "at": "escenas 2-6",
+        "cue": "Feria alternada con silencio de grillo"
+      },
+      {
+        "at": "escena 6",
+        "cue": "0,4 s de silencio en la cima"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Metal que se rompe + braam"
+      },
+      {
+        "at": "escenas 8-10",
+        "cue": "House en mayor; sellos de tarjeta"
+      }
+    ],
+    "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS, pico ≤ −1 dBTP."
+  },
+  "packaging": {
+    "title": "Tu peor día no es el martes. Adiviná cuál",
+    "cover": "NO ES EL MARTES",
+    "caption": "El martes también paga el alquiler 📅 Ejemplo con corte a $10.000.",
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#barberos"
+    ],
+    "pinned": "¿Cuál es tu día muerto? Comentá BARBER."
+  },
+  "scenes": [
+    {
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "Tu peor día de la semana no es el martes. Adiviná cuál.",
+      "onScreen": "TU PEOR DÍA:\n*NO ES MARTES*",
+      "visual": "Cuadro 0 en acción: un carrito de montaña rusa lleno de clientes ya está subiendo, con el clac-clac de la cadena; las vías dibujan la semana: pico enorme en SÁBADO, valle en MARTES.",
+      "camera": "Cámara montada en el carrito, mirando hacia arriba a la cima.",
+      "transition": "El carrito cae al valle (whip pan hacia abajo).",
+      "sfx": "Clac-clac de la cadena; golpe en 'no es el martes'."
+    },
+    {
+      "beat": "reward",
+      "reward": "humor",
+      "say": "El martes mirás el techo. Un grillo. Y la tele.",
+      "onScreen": "MARTES:\n*UN GRILLO*",
+      "visual": "El valle del martes: parque abandonado, una silla de barbero sola con telarañas, un grillo 3D gigante en el apoyabrazos, una tele vieja con estática.",
+      "camera": "Zoom lento al grillo; queda quieto un instante.",
+      "transition": "El grillo salta fuera de cuadro.",
+      "sfx": "Grillo; viento; estática de tele."
+    },
+    {
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "El sábado no das abasto. Doce esperando. El local explota.",
+      "onScreen": "SÁBADO:\n*12 ESPERANDO*",
+      "visual": "Pico del sábado: el local revienta de gente, las paredes se inflan como un globo, gente saliendo por la ventana; luces de feria a todo lo que da.",
+      "camera": "Gran angular desde adentro; sacudón en 'explota'.",
+      "transition": "Las paredes revientan en confeti.",
+      "sfx": "Multitud; globo que se infla y explota."
+    },
+    {
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Y el alquiler lo pagás los siete días. Igual.",
+      "onScreen": "ALQUILER:\n*7 DÍAS*",
+      "visual": "Una factura de alquiler 3D gigante cae sobre la montaña rusa y se queda clavada en cada uno de los 7 días como una guillotina.",
+      "camera": "Contrapicado a la factura que cae; siete golpes rápidos.",
+      "transition": "La factura sale arrastrada por el viento.",
+      "sfx": "Siete golpes secos, uno por día."
+    },
+    {
+      "beat": "reward",
+      "reward": "challenge",
+      "say": "Así que pensás: menos mal que está el sábado.",
+      "onScreen": "MENOS MAL\n*EL SÁBADO*",
+      "visual": "El carrito sube despacio otra vez hacia la cima del sábado; fuegos artificiales de festejo ya se ven arriba (engaño a propósito: todo parece bien).",
+      "camera": "Subida lenta, tensión; el horizonte se inclina.",
+      "transition": "Sigue la subida sin corte.",
+      "sfx": "Clac-clac más lento; fuegos artificiales lejanos."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Pero el que ve doce esperando, se va. Cuatro por sábado: {$corte*4}.",
+      "onScreen": "*{$corte*4}*\nCADA SÁBADO",
+      "pause_after": 0.4,
+      "visual": "En la cima, cuatro clientes miran la cola, se bajan del carrito y se van; el contador rojo cae a −{$corte*4}. El carrito queda detenido en la cima, temblando.",
+      "camera": "Plano en la cima, con todo el parque abajo; congelado en el silencio.",
+      "transition": "Silencio total de 0,4 s en la cima.",
+      "sfx": "Cuatro portazos; golpe grave; silencio."
+    },
+    {
+      "beat": "twist",
+      "reward": "twist",
+      "say": "El sábado explotado te espanta clientes. Y el martes vacío te cobra el alquiler.",
+      "onScreen": "EL SÁBADO\n*TE ESPANTA*",
+      "visual": "LA IMAGEN MÁS FUERTE: el carrito se descarrila en el pico del sábado, sale volando en cámara lenta, los clientes salen despedidos como fuegos artificiales fuera del parque; abajo, el martes sigue vacío.",
+      "camera": "Bullet time alrededor del carrito en el aire.",
+      "transition": "Una tarjeta de puntos vuela hacia la cámara y la tapa.",
+      "sfx": "Metal que se rompe; braam; gritos de feria en cámara lenta."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Imaginá una tarjeta de puntos en el celu. Los martes, puntos dobles.",
+      "onScreen": "MARTES:\n*PUNTOS x2*",
+      "visual": "Celular 3D con la tarjeta de puntos con QR; el día martes se prende con un 'x2' de neón que late.",
+      "camera": "El celular gira; push in al 'x2'.",
+      "transition": "Los sellos de la tarjeta se van llenando.",
+      "sfx": "Pop; 'ding' de neón."
+    },
+    {
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Y el que puede venir cualquier día… elige martes.",
+      "onScreen": "ELIGE\n*MARTES*",
+      "visual": "Las vías de la montaña rusa se aplanan: el pico baja, el valle sube; clientes del sábado se pasan caminando al martes, que se llena de luces. Paseo parejo y feliz.",
+      "camera": "Plano general del parque entero equilibrado; fuegos artificiales en los dos lados.",
+      "transition": "Iris sobre el carrito.",
+      "sfx": "Pasos y festejo; fuegos artificiales en mayor."
+    },
+    {
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "¿Cuál es tu día muerto? Comentá BARBER. Y ojo, que tu peor día…",
+      "onScreen": "COMENTÁ\n*BARBER*",
+      "visual": "BARBER en un cartel de feria con luces que corren; en los últimos 6 cuadros, el carrito vuelve al pie de la subida con el clac-clac, igual que el cuadro 0.",
+      "camera": "Termina en el plano del cuadro 0.",
+      "transition": "Corte en seco al inicio (loop).",
+      "sfx": "El clac-clac del inicio arranca justo en el corte."
+    }
+  ]
+}

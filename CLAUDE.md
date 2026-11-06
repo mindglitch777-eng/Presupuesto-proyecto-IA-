@@ -20,6 +20,10 @@ Diez videos verticales (TikTok, YouTube Shorts y Reels) para validar si las barb
 - **Lo que la app hace de verdad:** turnos online con seña por transferencia, fila virtual con QR, caja del día, ficha de cada cliente, lista de clientes que no volvieron con botón para escribirles por WhatsApp (link wa.me, sin API) y tarjeta de puntos.
 
 ## Estado actual
+- **Guiones nuevos (los que mandan):** `remotion/shorts/NN-nombre/short.json`, uno por video, con dirección completa: voz, pantalla, imagen, cámara, transición, efectos y música. Siguen `docs/REGLAS-SHORTS.md` (reglas de engagement del dueño). Para leerlos: `GUIONES-VIRALES.md`, que se genera con `cd remotion && node scripts/guiones-md.mjs`.
+- **Control antes del render:** `cd remotion && node scripts/check-short.mjs` revisa el largo del gancho, las palabras en pantalla, que no se repita la recompensa, la posición del giro, el loop y el cierre con BARBER.
+- **Montos en los guiones:** `{$corte*12}` es plata y `{#diasPrueba}` es un número; salen de `videos/config.js` (ver `remotion/scripts/montos.mjs`).
+- **Cada video es a medida:** se reutilizan herramientas (voz, subtítulos, cámara, efectos, 3D), nunca escenas fijas.
 - `GUIONES.md` tiene la primera versión de los 10 guiones.
 - `videos/guiones/01.js` a `05.js` son la versión nueva, más fuerte, escrita para el motor viejo con plantillas (`videos/engine/plantillas.js`). Sirven como texto base para Remotion. Del 06 al 10 hay que reescribirlos con el mismo estilo.
 - `videos/engine/` es el motor viejo (canvas + Playwright). Queda como referencia; los videos nuevos se hacen en Remotion.

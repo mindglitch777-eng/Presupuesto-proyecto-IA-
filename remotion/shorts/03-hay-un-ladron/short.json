@@ -1,0 +1,158 @@
+{
+  "id": "03-hay-un-ladron",
+  "title": "Hay un ladrón en tu barbería",
+  "feature": "Agenda online: un horario ocupado no se puede pisar",
+  "belief_broken": "Que el cuaderno es gratis y alcanza. Giro: el ladrón estuvo a la vista en cada escena; es el cuaderno.",
+  "fiction": true,
+  "sources": [
+    "Los dos Martín son un ejemplo inventado. El monto se calcula desde videos/config.js (24 cortes por año, cada 15 días)."
+  ],
+  "direction": {
+    "concept": "Una investigación policial para encontrar al ladrón de la barbería. Rueda de sospechosos, cinta, linterna. En TODAS las escenas, el cuaderno aparece en una esquina (en el mostrador, en la mano del socio, en la rueda de sospechosos) sin que nadie lo mire. En el giro, el cuaderno abre las tapas como una boca y se traga los billetes: era él.",
+    "look": "Papel y stop-motion: todo parece recortado en cartulina, con sombras duras, cinta adhesiva y garabatos de birome. El cuaderno es 3D, con hojas que se mueven. Después del giro, las hojas vuelan y se pliegan en origami hasta formar un celular.",
+    "pacing": "Interrogatorio rápido: cada sospechoso aparece y se tacha en medio segundo. Giro con la mayor animación (origami 3D). Final limpio.",
+    "loop": "El último cuadro es la rueda de sospechosos con el cuaderno en la esquina, igual que el cuadro 0. 'Fijate quién está en tu mostrador…' empalma con 'Hay un ladrón en tu barbería.'"
+  },
+  "music": {
+    "style": "Suspenso de policial: pizzicato de cuerdas sintetizadas, bajo que camina, golpes de timbal; en el giro, un braam; al final, el mismo tema en mayor con palmas.",
+    "tempo": "100 BPM.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Golpe de timbal + linterna que se prende"
+      },
+      {
+        "at": "escenas 2-6",
+        "cue": "Pizzicato de suspenso; birome que tacha en cada sospechoso"
+      },
+      {
+        "at": "escena 6",
+        "cue": "0,4 s de silencio"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Braam + papel que se rompe + origami que cruje"
+      },
+      {
+        "at": "escenas 8-10",
+        "cue": "Tema en mayor, liviano"
+      }
+    ],
+    "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS, pico ≤ −1 dBTP."
+  },
+  "packaging": {
+    "title": "Hay un ladrón en tu barbería (y lo tocás)",
+    "cover": "¿QUIÉN ES?",
+    "caption": "El cuaderno ya cumplió 📓 Ejemplo con corte a $10.000.",
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#barberos"
+    ],
+    "pinned": "Comentá BARBER si seguís con el cuaderno. Sin vergüenza."
+  },
+  "scenes": [
+    {
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "Hay un ladrón en tu barbería. Lo tocás todos los días. ¿Quién?",
+      "onScreen": "HAY UN\n*LADRÓN*",
+      "visual": "Cuadro 0 en acción: una linterna barre la barbería de cartulina en la oscuridad; una mano roba un billete del cajón y desaparece. En la esquina, el cuaderno sobre el mostrador.",
+      "camera": "Movimiento rápido siguiendo el haz de la linterna; en '¿quién es?', frena sobre el cajón vacío.",
+      "transition": "Corte con el clic de la linterna al apagarse.",
+      "sfx": "Golpe de timbal; clic de linterna; billete que se arrastra."
+    },
+    {
+      "beat": "reward",
+      "reward": "humor",
+      "say": "No es el cliente. No es tu socio. Ni el de enfrente.",
+      "onScreen": "NO ES\n*EL DE ENFRENTE*",
+      "visual": "Rueda de sospechosos de cartulina con regla de alturas: el cliente, el socio, el barbero de enfrente con anteojos de sol. Cada uno se tacha con una birome gigante. Al costado, apoyado en la pared, el cuaderno con un número de sospechoso que nadie mira.",
+      "camera": "Un plano por sospechoso (0,6 s cada uno), de izquierda a derecha.",
+      "transition": "La birome tacha toda la pantalla.",
+      "sfx": "Birome que tacha, tres veces; sello de 'INOCENTE'."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Sábado. Dos Martín anotados a las cinco.",
+      "onScreen": "DOS MARTÍN\n*A LAS 5*",
+      "visual": "Una hoja de cuaderno con tachones y una mancha de café: 'MARTÍN 17:00' escrito dos veces. Los dos nombres se iluminan en rojo, como prueba del crimen.",
+      "camera": "Zoom forense a la hoja con lupa.",
+      "transition": "Las dos palabras se levantan de la hoja y se vuelven dos personas.",
+      "sfx": "Lupa que suena 'zing'; dos golpes en los nombres."
+    },
+    {
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Llegan los dos. Uno espera, se calienta… y se va. Para siempre.",
+      "onScreen": "SE VA.\n*PARA SIEMPRE.*",
+      "visual": "Dos siluetas de cartulina entran desde los costados y chocan en la puerta; a una le sale humo de la cabeza, se pone roja y se va. La puerta se cierra y le ponen un candado.",
+      "camera": "Plano general de la puerta; zoom al humo; en 'para siempre', el candado en primer plano.",
+      "transition": "El portazo empuja la escena (push).",
+      "sfx": "Choque; olla a presión; portazo; candado."
+    },
+    {
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Y encima se moja, se pierde, o se lo lleva tu socio.",
+      "onScreen": "SE MOJA.\n*SE PIERDE.*",
+      "visual": "Tres viñetas de cartulina en 0,7 s cada una: el mate se vuelca sobre la hoja, una ráfaga de viento se la lleva por la ventana, la mano del socio se lleva el cuaderno abajo del brazo.",
+      "camera": "Tres cortes secos, uno por viñeta.",
+      "transition": "La hoja que vuela tapa la cámara.",
+      "sfx": "Líquido; viento; pasos que se alejan."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Ese Martín venía cada quince días. Son {$corte*24} por año.",
+      "onScreen": "*{$corte*24}*\nPOR AÑO",
+      "pause_after": 0.4,
+      "visual": "24 billetes rojos de cartulina se van caminando con patitas por la vereda; el contador rojo cae hasta −{$corte*24} y se sacude.",
+      "camera": "Seguimiento lateral de la fila de billetes.",
+      "transition": "Corte a negro de 0,4 s.",
+      "sfx": "Pasitos; tics que suben; golpe grave en 'por año'; silencio."
+    },
+    {
+      "beat": "twist",
+      "reward": "twist",
+      "say": "Y el ladrón estuvo en todas las escenas. Es tu cuaderno.",
+      "onScreen": "ES TU\n*CUADERNO*",
+      "visual": "LA IMAGEN MÁS FUERTE: repaso relámpago de las escenas anteriores con un círculo rojo sobre el cuaderno escondido en cada una. Después, el cuaderno 3D abre las tapas como una boca con dientes de espiral y se traga los billetes; las hojas se desprenden y vuelan en remolino.",
+      "camera": "Repaso a cámara rápida; después, push in hasta la boca del cuaderno.",
+      "transition": "Las hojas en remolino se pliegan en origami y forman un celular.",
+      "sfx": "Tres golpes en los círculos; braam; papel que se rompe y origami que cruje."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "En la app, si las cinco está ocupado, nadie lo pisa. Ni vos.",
+      "onScreen": "NADIE LO\n*PUEDE PISAR*",
+      "visual": "El celular de origami se vuelve un celular 3D real: agenda del sábado, el horario 17:00 con 'Martín' en violeta; otro intenta reservar las 17:00 y el botón queda gris, bloqueado con un candadito.",
+      "camera": "El celular gira de frente; push in al horario bloqueado.",
+      "transition": "La pantalla se parte al medio.",
+      "sfx": "Pop; 'clonk' de bloqueado."
+    },
+    {
+      "beat": "payoff",
+      "reward": "contrast",
+      "say": "Cuaderno: dos Martín. App: un Martín. Y lo ves desde tu casa.",
+      "onScreen": "CUADERNO vs\n*APP*",
+      "visual": "Pantalla partida con un rayo en el medio: izquierda, la hoja manchada con dos Martín peleando; derecha, la agenda limpia con un solo Martín sentado en la silla. La hoja se arruga sola y sale volando.",
+      "camera": "Las mitades chocan; gana la derecha.",
+      "transition": "La hoja arrugada sale de cuadro y deja la derecha entera (slide).",
+      "sfx": "Rayo; papel que se arruga; tilde."
+    },
+    {
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "¿Seguís con el cuaderno? Comentá BARBER. Y fijate quién está en tu mostrador…",
+      "onScreen": "COMENTÁ\n*BARBER*",
+      "visual": "BARBER escrito con birome gigante que se recorta como cartulina; en los últimos 6 cuadros vuelve la barbería oscura con la linterna y el cuaderno en el mostrador, igual que el cuadro 0.",
+      "camera": "Termina en el plano del cuadro 0.",
+      "transition": "Corte en seco al inicio (loop).",
+      "sfx": "Birome; el clic de linterna del inicio justo en el corte."
+    }
+  ]
+}

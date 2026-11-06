@@ -1,0 +1,168 @@
+{
+  "id": "04-game-over",
+  "title": "3 se fueron en 10 minutos",
+  "feature": "Fila virtual con QR en la puerta",
+  "belief_broken": "Que la gente se va de la fila por el precio o porque otro corta mejor. Giro: se van porque no saben cuánto falta.",
+  "fiction": true,
+  "sources": [
+    "Situación de ejemplo; el monto sale de videos/config.js (3 cortes)."
+  ],
+  "direction": {
+    "concept": "La barbería es un videojuego arcade de 8 bits. Cada cliente que entra es un personaje; cuando ve la fila, se le aparece 'GAME OVER' y se va. El video te engaña: te hace creer que es el precio (bajás el precio con un power-up y se siguen yendo). En el giro, el juego se congela, se rompe en píxeles y se ve un '?' gigante en 3D sobre cada cabeza: no saben cuánto falta. El QR es el power-up que gana el nivel.",
+    "look": "Pixel art saturado (magenta, cian, amarillo), tipografía de arcade, puntaje arriba y vidas en corazones. En el giro, el pixel se vuelve 3D de vóxeles. Al final, 'LEVEL UP' con fuegos artificiales de píxeles.",
+    "pacing": "Rítmico como un juego: cada salida con su 'GAME OVER' en un tiempo fijo. Glitch fuerte en el giro. Cierre de victoria.",
+    "loop": "El último cuadro es la puerta pixelada con el primer personaje entrando, igual que el cuadro 0. 'Antes de que entre el próximo…' empalma con 'Tres clientes se fueron en diez minutos.'"
+  },
+  "music": {
+    "style": "Chiptune (onda cuadrada y triangular, ruido de 8 bits) que se acelera; en el giro, el cartucho 'se cuelga' (glitch y silencio); al final, melodía de victoria.",
+    "tempo": "128 BPM; sube a 160 antes del giro.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Inicio de juego + moneda insertada"
+      },
+      {
+        "at": "escenas 2-5",
+        "cue": "Chiptune; 'game over' de 8 bits en cada salida"
+      },
+      {
+        "at": "escena 5",
+        "cue": "El juego se cuelga: 0,4 s de silencio"
+      },
+      {
+        "at": "escena 6 (giro)",
+        "cue": "Glitch + braam en vóxeles"
+      },
+      {
+        "at": "escenas 7-10",
+        "cue": "Power-up + melodía de victoria"
+      }
+    ],
+    "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS, pico ≤ −1 dBTP."
+  },
+  "packaging": {
+    "title": "3 clientes se fueron en 10 minutos. ¿Por qué?",
+    "cover": "GAME OVER",
+    "caption": "La fila te está espantando clientes 💈 Ejemplo con corte a $10.000.",
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#barberos"
+    ],
+    "pinned": "Comentá BARBER si atendés por orden de llegada."
+  },
+  "scenes": [
+    {
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "Tres clientes se fueron en diez minutos. Y no fue el precio.",
+      "onScreen": "3 SE FUERON\nEN *10 MIN*",
+      "visual": "Cuadro 0 en acción: un personaje pixelado ya está cruzando la puerta; arriba, el puntaje y tres corazones. Un reloj de arcade arranca la cuenta.",
+      "camera": "Plano lateral de juego de plataformas; zoom a los tres corazones en 'tres'.",
+      "transition": "Barrido de píxeles hacia la derecha.",
+      "sfx": "Moneda insertada; golpe de 8 bits en 'precio'."
+    },
+    {
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Entra. Ve la fila. Media vuelta.",
+      "onScreen": "*MEDIA VUELTA*",
+      "visual": "El personaje entra, ve un banco con cuatro esperando (se dibuja como fila de enemigos), se le ponen los ojos en espiral, gira 180° y sale. 'GAME OVER' gigante y se pierde un corazón.",
+      "camera": "Tres cortes al ritmo: entra, mira, se va.",
+      "transition": "El corazón explota en píxeles.",
+      "sfx": "Paso; 'bloop'; sonido de game over."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Y este. Y este. {$corte*3} en diez minutos.",
+      "onScreen": "*{$corte*3}*\nEN 10 MIN",
+      "visual": "Dos personajes más hacen lo mismo, cada vez más rápido; se pierden los otros dos corazones. El puntaje arriba baja en rojo: −{$corte*3}.",
+      "camera": "Cada salida más cerca; sacudón al perder el último corazón.",
+      "transition": "Pantalla de 'CONTINUE? 9… 8…'.",
+      "sfx": "Dos game over seguidos; error grave al perder todo."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Y los que se quedan miran el reloj. Y se calientan.",
+      "onScreen": "MIRAN\n*EL RELOJ*",
+      "visual": "Los personajes del banco miran un reloj de pared pixelado cada vez más grande; les sale vapor de 8 bits de la cabeza y se ponen rojos de a uno.",
+      "camera": "Paneo por las caras; zoom al reloj.",
+      "transition": "El reloj gira y barre la pantalla (clock-wipe).",
+      "sfx": "Tic-tac de 8 bits; vapor."
+    },
+    {
+      "beat": "reward",
+      "reward": "challenge",
+      "say": "Vos pensás: es el precio. O que el de enfrente corta mejor que vos.",
+      "onScreen": "¿ES *EL PRECIO?*",
+      "visual": "Un menú de juego con dos opciones: 'EL PRECIO' y 'EL DE ENFRENTE'. El cursor salta entre las dos. (Engaño a propósito.)",
+      "camera": "Plano fijo del menú, el cursor se mueve con la voz.",
+      "transition": "Se elige 'EL PRECIO' con un clic.",
+      "sfx": "Cursor de menú; selección."
+    },
+    {
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Bajás el precio. Y se siguen yendo.",
+      "onScreen": "SE SIGUEN\n*YENDO*",
+      "pause_after": 0.4,
+      "visual": "Un power-up de 'OFERTA' cae y el cartel de precio baja; igual entra otro personaje, ve la fila y se va. El juego se traba, la imagen tiembla y se congela.",
+      "camera": "Plano general; el congelado queda con líneas de scan.",
+      "transition": "Pantalla colgada: corte a negro de 0,4 s.",
+      "sfx": "Power-up; game over; el cartucho se cuelga y silencio."
+    },
+    {
+      "beat": "twist",
+      "reward": "twist",
+      "say": "No se van por la fila. Se van porque no saben cuánto falta.",
+      "onScreen": "NO SABEN\n*CUÁNTO FALTA*",
+      "visual": "LA IMAGEN MÁS FUERTE: el mundo pixelado se rompe y se vuelve 3D de vóxeles. La cámara vuela por encima del banco de espera y sobre cada cabeza aparece un '?' 3D gigante que gira, con un reloj que marca '??:??'. Rayos entre los signos de pregunta.",
+      "camera": "Vuelo de cámara sobre la fila, de perfil a cenital.",
+      "transition": "Los '?' se juntan y forman un QR (cross-zoom).",
+      "sfx": "Glitch + braam; tic-tac distorsionado."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Un QR en la puerta. Escanean, se anotan y se van a tomar un café.",
+      "onScreen": "ESCANEAN\nY *SE VAN*",
+      "visual": "El QR queda pegado en la puerta brillando como un power-up; un personaje lo escanea con el celu, aparece 'ANOTADO' y se va caminando con un vasito de café humeante.",
+      "camera": "Zoom al QR; seguimiento del personaje que se va.",
+      "transition": "Push hacia la pantalla del celu del personaje.",
+      "sfx": "Power-up; escaneo 'bip'; pasos tranquilos."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Y ven en vivo: vas tercero. Segundo. Te toca.",
+      "onScreen": "*3º → 2º → TE TOCA*",
+      "visual": "Celular 3D con la fila virtual: 'Vas 3º · faltan ~25 min' baja a 2º y después a '¡TE TOCA!' con estrellas. El personaje vuelve justo y se sienta.",
+      "camera": "Push in a la pantalla; en 'te toca', destello.",
+      "transition": "La pantalla se parte para la comparación.",
+      "sfx": "Tres 'bip' que suben de tono; fanfarria corta."
+    },
+    {
+      "beat": "payoff",
+      "reward": "contrast",
+      "say": "Banco vacío… caja llena.",
+      "onScreen": "BANCO VACÍO,\n*CAJA LLENA*",
+      "visual": "Pantalla partida con rayo: izquierda, banco repleto de personajes enojados y caja con telarañas; derecha, banco vacío y una caja que explota en monedas de 8 bits. 'LEVEL UP' con fuegos artificiales de píxeles.",
+      "camera": "La línea del medio se corre hacia la izquierda; zoom a la caja llena.",
+      "transition": "Slide del lado derecho a pantalla completa.",
+      "sfx": "Rayo; lluvia de monedas; fanfarria de nivel superado."
+    },
+    {
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "¿Atendés por orden de llegada? Comentá BARBER. Antes del próximo…",
+      "onScreen": "COMENTÁ\n*BARBER*",
+      "visual": "BARBER en letras de arcade con brillo; 'PRESS START' titila. En los últimos 6 cuadros vuelve la puerta pixelada con el primer personaje entrando, igual que el cuadro 0.",
+      "camera": "Termina en el plano del cuadro 0.",
+      "transition": "Corte en seco al inicio (loop).",
+      "sfx": "La moneda del inicio cae justo en el corte."
+    }
+  ]
+}

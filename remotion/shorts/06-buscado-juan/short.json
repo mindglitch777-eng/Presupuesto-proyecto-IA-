@@ -1,0 +1,158 @@
+{
+  "id": "06-buscado-juan",
+  "title": "Juan desapareció hace 63 días",
+  "feature": "Lista de clientes que no volvieron, con botón para escribirles por WhatsApp (link wa.me)",
+  "belief_broken": "Que el cliente que deja de venir se fue con otro. Giro: el enemigo eras vos; no se fue, se olvidó, y nadie le escribió.",
+  "fiction": true,
+  "sources": [
+    "Juan, Lucas y los días son un ejemplo inventado. Los montos salen de videos/config.js (24 cortes por año por cliente)."
+  ],
+  "direction": {
+    "concept": "Un caso policial: 'BUSCADO: JUAN'. Tablero de detective con fotos, chinches e hilos rojos. El video te hace creer que a Juan se lo robó la barbería de enfrente. En el giro, todos los hilos rojos se tensan, giran y apuntan a un espejo: del otro lado está tu silueta. Juan no se fue: nadie le escribió.",
+    "look": "Thriller de detective: corcho, fotos Polaroid, hilos rojos, lámpara de escritorio que hace un cono de luz, humo. Tonos ocre y rojo. Después del giro, la pantalla de la app en verde WhatsApp genérico (sin logo).",
+    "pacing": "Investigación con cortes secos de prueba en prueba; el tablero se llena cada vez más rápido; silencio; el giro con todos los hilos moviéndose a la vez en 3D.",
+    "loop": "El último cuadro vuelve al cartel de 'BUSCADO: JUAN' clavado en el corcho, igual que el cuadro 0. 'Ahora mismo, otro Juan…' empalma con 'Juan desapareció hace sesenta y tres días.'"
+  },
+  "music": {
+    "style": "Thriller: pulso de sintetizador grave, cuerdas tensas, cajas de ritmo secas; en el giro, braam y un coro oscuro; al final, un tema cálido con guitarra pulsada (Karplus-Strong).",
+    "tempo": "95 BPM.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Golpe + máquina de escribir"
+      },
+      {
+        "at": "escenas 2-6",
+        "cue": "Pulso de thriller; chinche que se clava en cada prueba"
+      },
+      {
+        "at": "escena 6",
+        "cue": "0,4 s de silencio"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Braam + hilos que se tensan como cuerdas"
+      },
+      {
+        "at": "escenas 8-10",
+        "cue": "Guitarra cálida, esperanza"
+      }
+    ],
+    "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS, pico ≤ −1 dBTP."
+  },
+  "packaging": {
+    "title": "Juan desapareció hace 63 días. Nadie lo buscó",
+    "cover": "BUSCADO",
+    "caption": "Los clientes no se van, se olvidan 💈 Ejemplo con corte a $10.000.",
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#clientes"
+    ],
+    "pinned": "¿Cuántos Juanes tenés? Comentá BARBER."
+  },
+  "scenes": [
+    {
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "Juan desapareció hace sesenta y tres días. Nadie lo buscó. ¿Dónde está?",
+      "onScreen": "BUSCADO:\n*JUAN*",
+      "visual": "Cuadro 0 en acción: un cartel de 'BUSCADO' con la foto de Juan ya está cayendo sobre el corcho y una chinche lo clava de golpe. La lámpara se prende. Un contador de días corre hasta 63.",
+      "camera": "Golpe de cámara junto con la chinche; push in a la foto.",
+      "transition": "La luz de la lámpara barre hacia la derecha.",
+      "sfx": "Chinche que se clava; máquina de escribir en '63'."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Venía cada quince días. Degradé bajo. Puntual.",
+      "onScreen": "CADA *15 DÍAS*",
+      "visual": "Expediente que se abre: un calendario donde cada 15 días se marca una tijerita verde, y después las marcas se cortan de golpe y siguen los días vacíos en gris.",
+      "camera": "Cenital del expediente; la cámara recorre el calendario.",
+      "transition": "La hoja del expediente se da vuelta (flip).",
+      "sfx": "Hoja de papel; tijerita en cada marca; silencio en los días grises."
+    },
+    {
+      "beat": "reward",
+      "reward": "humor",
+      "say": "No se quejó. No dejó una reseña. Ni un emoji. Nada.",
+      "onScreen": "NI UN\n*EMOJI*",
+      "visual": "Tres pruebas en bolsitas de evidencia, vacías: 'QUEJA: —', 'RESEÑA: —', 'EMOJI: —'. La última bolsita tiene un emoji triste que se desinfla.",
+      "camera": "Un plano por bolsita.",
+      "transition": "Corte con flash de cámara forense.",
+      "sfx": "Tres flashes; globo que se desinfla."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Un Juan son veinticuatro cortes por año. {$corte*24}.",
+      "onScreen": "*{$corte*24}*\nPOR AÑO",
+      "visual": "24 tijeritas se clavan en el corcho una tras otra; el contador rojo cae a −{$corte*24}.",
+      "camera": "Ráfaga de primeros planos de las tijeras clavándose.",
+      "transition": "Zoom hacia afuera que revela el tablero entero.",
+      "sfx": "24 chinches en ráfaga; golpe grave en el número."
+    },
+    {
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Y en el tablero no hay un Juan. Hay cinco.",
+      "onScreen": "NO HAY UNO.\n*HAY CINCO.*",
+      "visual": "Cuatro carteles de 'BUSCADO' más caen alrededor del de Juan; los hilos rojos los unen; el tablero tiembla.",
+      "camera": "La cámara retrocede y el tablero se ve cada vez más lleno.",
+      "transition": "Sacudón con polvo del corcho.",
+      "sfx": "Cuatro golpes de carteles; tensión de cuerdas."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "{$corte*120} por año. Seguro se fueron a lo de enfrente.",
+      "onScreen": "*{$corte*120}*\nPOR AÑO",
+      "pause_after": 0.4,
+      "visual": "El contador rojo cae a −{$corte*120} y la pantalla se agrieta; un hilo rojo sale disparado hacia la foto de la barbería de enfrente (el engaño).",
+      "camera": "Seguimiento del hilo; quietud total en el silencio.",
+      "transition": "Corte a negro de 0,4 s.",
+      "sfx": "Golpe grave + error; latigazo del hilo; silencio."
+    },
+    {
+      "beat": "twist",
+      "reward": "twist",
+      "say": "Pero Juan no se fue. Se olvidó. Y nadie le escribió.",
+      "onScreen": "NADIE\n*LE ESCRIBIÓ*",
+      "visual": "LA IMAGEN MÁS FUERTE: todos los hilos rojos se sueltan de la barbería de enfrente, flotan en 3D y giran hacia la cámara hasta apuntar a un espejo. En el espejo, la silueta de un barbero con el celular en la mano, sin escribir. El cono de luz de la lámpara gira y te apunta.",
+      "camera": "La cámara gira 180° siguiendo los hilos y termina frente al espejo.",
+      "transition": "El espejo se vuelve la pantalla de un celular.",
+      "sfx": "Braam; hilos que vibran como cuerdas; coro oscuro."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Imaginá una lista: Juan, sesenta y tres días. Lucas, cuarenta y uno. Y un botón.",
+      "onScreen": "*JUAN · 63 DÍAS*",
+      "visual": "Celular 3D con la lista 'Hace rato que no vienen': Juan · 63 días, Lucas · 41 días, Nico · 35 días; al lado de cada uno, un botón verde de mensaje.",
+      "camera": "El celular sube desde abajo; push in a la fila de Juan.",
+      "transition": "El dedo toca el botón y la pantalla se abre (zoom).",
+      "sfx": "Whoosh; pop en cada fila."
+    },
+    {
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Un toque: '¿Juan, te guardo un turno?'. Sin lista, es un recuerdo. Con lista, un mensaje.",
+      "onScreen": "¿TE GUARDO\n*UN TURNO?*",
+      "visual": "Se abre un chat verde genérico con el mensaje ya escrito; se envía con un 'fiuu'. En el tablero de detective, el cartel de Juan pasa de 'BUSCADO' a 'ENCONTRADO' con un sello verde.",
+      "camera": "Push in al botón de enviar; corte al sello.",
+      "transition": "El sello verde golpea la pantalla.",
+      "sfx": "Mensaje enviado; sello; guitarra cálida."
+    },
+    {
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "¿Cuántos Juanes tenés? Comentá BARBER. Porque ahora mismo, otro Juan…",
+      "onScreen": "COMENTÁ\n*BARBER*",
+      "visual": "BARBER escrito con hilos rojos sobre el corcho; en los últimos 6 cuadros cae un nuevo cartel 'BUSCADO: JUAN' y la chinche lo clava, igual que el cuadro 0.",
+      "camera": "Termina en el plano del cuadro 0.",
+      "transition": "Corte en seco al inicio (loop).",
+      "sfx": "La chinche del inicio cae justo en el corte."
+    }
+  ]
+}

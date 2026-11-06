@@ -1,0 +1,158 @@
+{
+  "id": "01-peor-que-un-mal-corte",
+  "title": "Hay algo peor que un mal corte",
+  "feature": "Turnos online con seña por transferencia",
+  "belief_broken": "Que el cliente que falta es mala suerte. Giro: no es suerte, es que el turno le salió gratis, y lo que es gratis se falta.",
+  "fiction": false,
+  "sources": [
+    "Montos de ejemplo calculados desde videos/config.js (corte y seña). No hay datos de estudios ni testimonios."
+  ],
+  "direction": {
+    "concept": "Un policial negro sobre un crimen de todos los sábados: la víctima es una silla de barbero vacía. Durante la primera mitad parece que el culpable es el cliente que no vino. En el giro, la silla 3D estalla en mil pedazos y de adentro sale una etiqueta de precio gigante que dice $0: el turno no le costó nada, por eso faltó. Después entra la seña y todo se tiñe de verde.",
+    "look": "Cine negro en blanco y negro con un único color: ROJO para la plata que se pierde. Grano de película, luz de persiana que corta la pantalla en franjas, humo. Desde que aparece la seña, el VERDE reemplaza al rojo. La silla es 3D (@remotion/three), cromada, con reflejos.",
+    "pacing": "Golpes secos y cortes cada 1,5 s en la primera mitad; la cuenta del año sube a toda velocidad; silencio de 0,4 s; el giro es una explosión en cámara lenta; el final es rápido y verde.",
+    "loop": "El último cuadro vuelve a la silla vacía bajo la luz de persiana, igual que el cuadro 0. 'Porque lo peor no es un mal corte…' empalma con '¿Sabés qué es peor que un mal corte?'."
+  },
+  "music": {
+    "style": "Jazz noir sintetizado (contrabajo pulsado, platillo con escobilla, saxo de onda cuadrada filtrada) que se transforma en trap con 808 en el giro; el final en mayor.",
+    "tempo": "90 BPM; el trap del giro a 140 BPM (doble tiempo).",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Golpe grave + contrabajo que arranca"
+      },
+      {
+        "at": "escenas 2-6",
+        "cue": "Jazz noir; tic de reloj en cada número"
+      },
+      {
+        "at": "escena 6",
+        "cue": "Todo se corta: 0,4 s de silencio"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Vidrio que estalla + braam + entra el trap"
+      },
+      {
+        "at": "escenas 8-11",
+        "cue": "Trap brillante en mayor; caja registradora en cada verde"
+      }
+    ],
+    "mix": "Voz al frente, música −10 dB bajo la voz, final a −14 LUFS, pico ≤ −1 dBTP."
+  },
+  "packaging": {
+    "title": "Peor que un mal corte: la silla vacía",
+    "cover": "TE CLAVARON",
+    "caption": "El que te clava un sábado no sabe lo que te cuesta 💈 Montos de ejemplo con corte a $10.000.",
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#barberos"
+    ],
+    "pinned": "Comentá BARBER y te paso la app para probarla."
+  },
+  "scenes": [
+    {
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "¿Sabés qué es peor que un mal corte? Te pasa los sábados.",
+      "onScreen": "PEOR QUE UN\n*MAL CORTE*",
+      "visual": "Cuadro 0 en acción: la silla de barbero 3D gira sola en la oscuridad bajo una luz de persiana; una tijera cae del techo y se clava al lado con chispas. El texto entra golpeando con la palabra 'peor'.",
+      "camera": "Dolly in rapidísimo hacia la silla; en 'sábados' la cámara frena en seco.",
+      "transition": "La luz de persiana barre la pantalla (wipe en diagonal).",
+      "sfx": "Golpe grave en 'peor'; metal de la tijera clavándose."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Una silla vacía. Sábado, diez de la mañana. Te clavaron.",
+      "onScreen": "SÁBADO 10:00\n*TE CLAVARON.*",
+      "visual": "Escena del crimen: cinta amarilla de policía alrededor de la silla vacía, la silueta de tiza de un cliente dibujada en el asiento, un reloj de pared que marca las 10:00 y se traba.",
+      "camera": "Tres planos de 0,8 s: reloj, cinta, silla; en 'clavaron', zoom de golpe con sacudón.",
+      "transition": "Flash de cámara de policía.",
+      "sfx": "Tic de reloj que se traba; flash fotográfico; golpe en 'clavaron'."
+    },
+    {
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Ni avisó. Le escribiste. Doble tilde azul. Y nada.",
+      "onScreen": "DOBLE TILDE AZUL.\n*Y NADA.*",
+      "visual": "Un celular genérico enorme: tu mensaje '¿venís?' con doble tilde azul; los tres puntitos de 'escribiendo…' aparecen y desaparecen tres veces y no llega nada. Una pelotita de paja del desierto cruza la pantalla.",
+      "camera": "Plano cerrado al chat; en 'y nada', alejamiento rápido que muestra el local vacío.",
+      "transition": "La pelotita de paja empuja la escena hacia el costado (push).",
+      "sfx": "Sonido de mensaje; tres 'blip' de escribiendo; viento del desierto."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Ese turno eran {$corte}. Volando.",
+      "onScreen": "*{$corte}*\nVOLANDO",
+      "visual": "Un billete rojo 3D sale de la silla y se va volando por la ventana; el contador rojo gigante cae de $0 a −{$corte} con rayos.",
+      "camera": "Seguimiento del billete; sacudón cuando el contador frena.",
+      "transition": "Zoom-blur hacia el contador.",
+      "sfx": "Whoosh del billete; tics del contador; error grave al frenar."
+    },
+    {
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Y a las nueve rechazaste a uno que sí venía.",
+      "onScreen": "RECHAZASTE AL\nQUE *SÍ VENÍA*",
+      "visual": "Flashback en sepia: un cliente en la puerta a las 9:00, vos negando con la cabeza; la puerta se cierra y su silueta se va. Un sello rojo cae encima: 'RECHAZADO'.",
+      "camera": "Plano holandés (inclinado); en 'sí', la cámara se endereza de golpe.",
+      "transition": "El sello rojo golpea la pantalla y la cubre.",
+      "sfx": "Puerta que se cierra; sello seco."
+    },
+    {
+      "beat": "reward",
+      "reward": "number",
+      "say": "Tres por semana: {$corte*144} por año.",
+      "onScreen": "*{$corte*144}*\nPOR AÑO",
+      "pause_after": 0.4,
+      "visual": "Una pared de 144 sillas vacías se arma de a filas a toda velocidad hasta el infinito; el contador rojo corre hasta −{$corte*144} y tiembla, la pantalla se agrieta.",
+      "camera": "Grúa que se aleja hasta ver el mar de sillas; quietud total en el silencio.",
+      "transition": "Corte a negro de 0,4 s (el silencio).",
+      "sfx": "Tics que aceleran; golpe grave en 'por año'; después, silencio total."
+    },
+    {
+      "beat": "twist",
+      "reward": "twist",
+      "say": "No es mala suerte. Le salió gratis. Y lo gratis, se falta.",
+      "onScreen": "LE SALIÓ\n*GRATIS*",
+      "visual": "LA IMAGEN MÁS FUERTE: la silla 3D estalla en cámara lenta en mil pedazos cromados; del centro se levanta una etiqueta de precio gigante que gira y dice $0. Los pedazos quedan flotando alrededor como un planeta.",
+      "camera": "Bullet time: la cámara orbita 180° alrededor de la explosión congelada.",
+      "transition": "La etiqueta $0 se da vuelta y del otro lado dice SEÑA (flip).",
+      "sfx": "Vidrio que estalla + braam grave; entra el trap en 'gratis'."
+    },
+    {
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Ahora el cliente reserva en tu link y deja {$sena} de seña.",
+      "onScreen": "SEÑA *{$sena}*\nPOR TRANSFERENCIA",
+      "visual": "El mundo pasa de blanco y negro a color. Un celular 3D cae desde arriba y aterriza girando: pantalla de reserva, el cliente toca 'Sábado 10:00', aparece 'Seña {$sena} por alias' y un tilde verde.",
+      "camera": "El celular entra en espiral; la cámara se mete en la pantalla.",
+      "transition": "La pantalla del celular se abre en dos y se vuelve la pantalla partida.",
+      "sfx": "Whoosh de entrada; pop en el toque; tilde."
+    },
+    {
+      "beat": "payoff",
+      "reward": "contrast",
+      "say": "Sin seña, silla vacía. Con seña, viene. Y si falta, la seña es tuya.",
+      "onScreen": "SIN SEÑA vs\n*CON SEÑA*",
+      "visual": "Pantalla partida épica con un rayo en el medio: a la izquierda, en blanco y negro, la silla vacía y −{$corte}; a la derecha, en color, la silla ocupada, confeti y +{$sena} verde. La línea del medio se corre hasta que gana la derecha.",
+      "camera": "Las dos mitades se empujan; la derecha avanza en cada frase.",
+      "transition": "La mitad derecha se come toda la pantalla (slide).",
+      "sfx": "Rayo en 'con seña'; caja registradora en 'tuya'."
+    },
+    {
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Comentá BARBER. Porque lo peor no es un mal corte…",
+      "onScreen": "COMENTÁ\n*BARBER*",
+      "visual": "Confeti verde y la palabra BARBER latiendo con un dedo que señala a los comentarios; en los últimos 6 cuadros el color se apaga y queda la silla vacía bajo la luz de persiana, igual que el cuadro 0.",
+      "camera": "Termina en el mismo plano del cuadro 0.",
+      "transition": "Corte en seco al inicio (loop).",
+      "sfx": "Pop en BARBER; el contrabajo del inicio entra justo en el corte."
+    }
+  ]
+}
