@@ -14,6 +14,7 @@
     "loop": "El último cuadro es el chat vacío con el primer globo '¿tenés turno?' entrando, igual que el cuadro 0. 'Antes de los próximos cuarenta y siete…' empalma con 'Ocho cortes. Cuarenta y siete mensajes.'"
   },
   "music": {
+    "preset": "hyperpop",
     "style": "Hyperpop glitch: arpegios rápidos, bajos distorsionados, cortes de cinta. Después del giro, lo-fi tranquilo con un bombo firme.",
     "tempo": "150 BPM caótico; 90 BPM después del giro.",
     "sections": [

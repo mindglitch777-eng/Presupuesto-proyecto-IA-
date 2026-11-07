@@ -14,6 +14,7 @@
     "loop": "El último cuadro vuelve al cartel de 'BUSCADO: JUAN' clavado en el corcho, igual que el cuadro 0. 'Ahora mismo, otro Juan…' empalma con 'Juan desapareció hace sesenta y tres días.'"
   },
   "music": {
+    "preset": "thriller",
     "style": "Thriller: pulso de sintetizador grave, cuerdas tensas, cajas de ritmo secas; en el giro, braam y un coro oscuro; al final, un tema cálido con guitarra pulsada (Karplus-Strong).",
     "tempo": "95 BPM.",
     "sections": [

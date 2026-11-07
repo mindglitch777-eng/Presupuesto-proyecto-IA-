@@ -2,14 +2,14 @@
 
 Diez videos verticales animados con código para TikTok, YouTube Shorts y Reels. Sirven para validar si las barberías quieren la app antes de construirla.
 
-- **`GUIONES.md`**: los 10 guiones escena por escena, con las reglas de retención y el orden de publicación.
+- **`GUIONES-VIRALES.md`**: los 10 guiones nuevos para leer, con gancho, giro y loop. Los guiones de verdad están en `remotion/shorts/NN-nombre/short.json`; las reglas que siguen, en `docs/REGLAS-SHORTS.md`.
 - **`videos/config.js`**: precio del corte, seña, precios de la app y tu usuario. Si cambiás un valor y volvés a renderizar, los montos se recalculan.
-- **`videos/guiones/01.js` … `10.js`**: cada video, escena por escena.
-- **`videos/engine/`**: el motor. Dibuja cada cuadro en un canvas, lo captura con Playwright y lo codifica con ffmpeg. Encima suma:
-  - **Voz:** `voz.py` usa Edge TTS, con la voz masculina argentina `es-AR-TomasNeural` por defecto. Si no hay internet, cae a una voz Piper local. Los montos se leen en palabras.
-  - **Música:** `musica.py` genera un beat de trap/phonk distinto para cada video. Es todo sintetizado, sin samples de terceros.
-  - **Efectos:** `sfx.py` los sintetiza y mezcla todo, con la música que baja cuando habla la voz.
-- **`videos/render/`**: los MP4 terminados (1080×1920, 30 fps).
+- **`remotion/`**: los videos, hechos con Remotion.
+  - Cada video tiene su propio código en `src/shorts/v01.tsx` … `v10.tsx`, con 3D, transiciones, partículas, rayos y la comparación SIN/CON la app.
+  - **Voz:** Edge TTS `es-CO-GonzaloNeural` a +22 %, con subtítulos palabra por palabra.
+  - **Música y efectos:** generados por código en `audio/`. La música baja cuando habla la voz y frena en silencio justo antes del giro.
+- **`videos/render/`**: los MP4 terminados (1080×1920, 30 fps, −14 LUFS).
+- **`GUIONES.md`** y **`videos/engine/`**: la primera versión y el motor viejo, que quedan como referencia.
 
 ## Renderizar en GitHub (recomendado)
 
@@ -18,23 +18,20 @@ El workflow `.github/workflows/videos.yml` renderiza los 10 videos en paralelo c
 - **Solo:** cada vez que se cambia un guion, el motor o `config.js`.
 - **A mano:** desde el celular, en la pestaña **Actions** → **Renderizar videos** → **Run workflow**. Ahí se eligen los videos (por ejemplo `01,04` o `todos`), la voz y la velocidad.
 
-Tarda unos 5 minutos. Los links de descarga son siempre los mismos: `https://github.com/mindglitch777-eng/Presupuesto-proyecto-IA-/raw/main/videos/render/01.mp4` (y así del 01 al 10).
+Tarda unos 15 minutos. Los links de descarga son siempre los mismos: `https://github.com/mindglitch777-eng/Presupuesto-proyecto-IA-/raw/main/videos/render/01.mp4` (y así del 01 al 10).
 
 Otras voces masculinas para probar: `es-MX-JorgeNeural`, `es-CO-GonzaloNeural`, `es-US-AlonsoNeural`.
 
 ## Renderizar en una computadora
 
 ```bash
-cd videos
-node engine/render.mjs 01            # video completo → out/01.mp4
-node engine/render.mjs 01 --sheet    # un cuadro por escena para revisar → out/01-sheet.jpg
+cd remotion && npm install
+pip install edge-tts numpy soundfile scipy num2words
+node scripts/render.mjs 01           # video completo → videos/render/01.mp4
+node scripts/hoja.mjs 01             # una captura por escena para revisar → remotion/out/01-…-hoja.jpg
 ```
 
-Hace falta Node con Playwright, ffmpeg y Python. La primera vez, `sh videos/engine/setup_voz.sh` descarga las voces y las dependencias. Cada video tarda alrededor de un minuto y medio.
-
-- **Otra voz:** `VOZ=vits-piper-es_AR-daniela-high node engine/render.mjs 01` usa la voz argentina femenina. Es más regional, pero se entiende menos.
-- **Velocidad:** se cambia con `VOZ_VELOCIDAD=1.0`.
-- **Sin voz o sin música:** `--sin-voz` o `--sin-musica`.
+Sin internet, `VOZ_MOTOR=estimado` arma todo con la voz en silencio y tiempos estimados. Sirve para revisar la animación.
 
 ## Al publicar
 

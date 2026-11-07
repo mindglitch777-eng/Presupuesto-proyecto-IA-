@@ -4,7 +4,9 @@
   "feature": "Ficha de cada cliente (cómo se corta, detalles)",
   "belief_broken": "Que un buen barbero se acuerda de todo. Giro: el video te toma examen de memoria con algo que viste hace diez segundos, y fallás.",
   "fiction": true,
-  "sources": ["Lucas y su corte son un ejemplo inventado. El monto sale de videos/config.js (24 cortes por año)."],
+  "sources": [
+    "Lucas y su corte son un ejemplo inventado. El monto sale de videos/config.js (24 cortes por año)."
+  ],
   "direction": {
     "concept": "La cabeza del barbero es un archivo 3D gigante con miles de cajoncitos. El cliente dice 'como la otra vez' y los cajones se abren y se cierran desesperados. En la escena 3 se ve, durante un segundo, la ficha del corte con un dato clave: el número 2 al costado. En el giro, el video te frena y te pregunta a vos qué número era. Rebobina y muestra que era un 2: así de fácil se olvida.",
     "look": "Surrealista: interior de una cabeza como biblioteca infinita con cajones de madera, papeles que vuelan, luz de vela azul. Toques de humor de cómic (gotas de sudor, signos de pregunta). Después del giro, la ficha limpia en tarjeta violeta.",
@@ -12,14 +14,30 @@
     "loop": "El último cuadro vuelve al globo de diálogo 'HACÉMELO COMO LA OTRA VEZ' entrando, igual que el cuadro 0. 'La próxima vez que te digan…' empalma con el gancho."
   },
   "music": {
+    "preset": "comedia",
     "style": "Comedia tensa: pizzicato y marimba nerviosa, reloj de fondo; en el giro, todo se congela y suena un 'rebobinado'; al final, un groove relajado con bajo.",
     "tempo": "110 BPM.",
     "sections": [
-      { "at": "escena 1", "cue": "Pop del globo + golpe" },
-      { "at": "escenas 2-6", "cue": "Marimba nerviosa; cajones que se abren y cierran" },
-      { "at": "escena 6", "cue": "0,4 s de silencio" },
-      { "at": "escena 7 (giro)", "cue": "Tic de reloj de examen + rebobinado" },
-      { "at": "escenas 8-10", "cue": "Groove relajado" }
+      {
+        "at": "escena 1",
+        "cue": "Pop del globo + golpe"
+      },
+      {
+        "at": "escenas 2-6",
+        "cue": "Marimba nerviosa; cajones que se abren y cierran"
+      },
+      {
+        "at": "escena 6",
+        "cue": "0,4 s de silencio"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Tic de reloj de examen + rebobinado"
+      },
+      {
+        "at": "escenas 8-10",
+        "cue": "Groove relajado"
+      }
     ],
     "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS, pico ≤ −1 dBTP."
   },
@@ -27,12 +45,18 @@
     "title": "\"Hacémelo como la otra vez\" y no tenés idea",
     "cover": "¿ERA UN 1 O UN 2?",
     "caption": "El cliente vuelve cuando lo conocés 💈",
-    "hashtags": ["#barberia", "#barbero", "#barberiaargentina", "#degradado"],
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#degradado"
+    ],
     "pinned": "¿Te pasó? Comentá BARBER."
   },
   "scenes": [
     {
-      "beat": "hook", "reward": "humor",
+      "beat": "hook",
+      "reward": "humor",
       "say": "'Hacémelo como la otra vez.' Y vos no tenés idea. ¿Cómo era?",
       "onScreen": "\"COMO LA\n*OTRA VEZ*\"",
       "visual": "Cuadro 0 en acción: un globo de diálogo gigante ya está entrando desde la silla y golpea la pantalla. Tu cara de barbero queda en blanco con una gota de sudor de cómic.",
@@ -41,7 +65,8 @@
       "sfx": "Pop del globo; golpe; tic."
     },
     {
-      "beat": "reward", "reward": "reveal",
+      "beat": "reward",
+      "reward": "reveal",
       "say": "Adentro de tu cabeza: cuarenta clientes por semana. Y ninguna ficha.",
       "onScreen": "*40 CLIENTES*\nCERO FICHAS",
       "visual": "Interior de la cabeza: una biblioteca 3D infinita de cajoncitos con nombres; los cajones se abren y se cierran solos, desesperados, y salen papeles volando.",
@@ -50,7 +75,8 @@
       "sfx": "Cajones de madera en ráfaga; papeles."
     },
     {
-      "beat": "reward", "reward": "data",
+      "beat": "reward",
+      "reward": "data",
       "say": "Hace un mes te lo dijo: un dos al costado, tijera arriba.",
       "onScreen": "*UN 2* AL COSTADO",
       "visual": "Flashback en sepia de un segundo y medio: Lucas en la silla, y una tarjetita flota con 'DEGRADÉ BAJO · 2 AL COSTADO · TIJERA ARRIBA', con el 2 bien grande. La tarjetita se prende fuego y se vuelve ceniza.",
@@ -59,7 +85,8 @@
       "sfx": "Rebobinado corto; fuego."
     },
     {
-      "beat": "reward", "reward": "consequence",
+      "beat": "reward",
+      "reward": "consequence",
       "say": "Le errás por medio número… y no vuelve.",
       "onScreen": "*MEDIO NÚMERO*\nY NO VUELVE",
       "visual": "La máquina 3D baja con el peine equivocado: un escalón feo en el degradé, el cliente se mira al espejo, el espejo se raja y la puerta se cierra con él afuera.",
@@ -68,7 +95,8 @@
       "sfx": "Zumbido de máquina; vidrio que se raja; portazo."
     },
     {
-      "beat": "reward", "reward": "number",
+      "beat": "reward",
+      "reward": "number",
       "say": "Venía cada quince días. {$corte*24} por año. Por medio número.",
       "onScreen": "*{$corte*24}*\nPOR AÑO",
       "visual": "24 peines 3D caen del techo como lluvia; el contador rojo cae a −{$corte*24}.",
@@ -77,7 +105,8 @@
       "sfx": "Peines que caen; golpe grave."
     },
     {
-      "beat": "reward", "reward": "paradox",
+      "beat": "reward",
+      "reward": "paradox",
       "say": "Y no es que seas mal barbero. Es que nadie se acuerda de todo.",
       "onScreen": "NADIE SE\n*ACUERDA DE TODO*",
       "pause_after": 0.4,
@@ -87,7 +116,8 @@
       "sfx": "Viento del remolino; silencio total."
     },
     {
-      "beat": "twist", "reward": "twist",
+      "beat": "twist",
+      "reward": "twist",
       "say": "A ver vos: ¿qué número le iba al costado? … Era un dos. Lo viste hace diez segundos.",
       "onScreen": "¿QUÉ NÚMERO\n*ERA?*",
       "visual": "LA IMAGEN MÁS FUERTE: el video se detiene y te habla. Cronómetro de examen de 2 segundos con tres opciones gigantes: 1 · 2 · 3. Después, el video se rebobina en cámara rápida hasta la escena 3 y un círculo rojo enorme marca el 2 en la tarjetita.",
@@ -96,7 +126,8 @@
       "sfx": "Tic de examen; rebobinado de cinta; golpe en 'un dos'."
     },
     {
-      "beat": "reward", "reward": "reveal",
+      "beat": "reward",
+      "reward": "reveal",
       "say": "Ahora imaginá una ficha por cliente: degradé bajo, dos al costado, tijera arriba.",
       "onScreen": "*LA FICHA*\nDE LUCAS",
       "visual": "Celular 3D: buscás 'Lucas' y se abre su ficha violeta con 'Degradé bajo · 2 al costado · tijera arriba · barba perfilada' y la fecha del último corte. Los cajones de la cabeza se cierran todos de golpe, ordenados.",
@@ -105,7 +136,8 @@
       "sfx": "Pop; cajones que se cierran en orden."
     },
     {
-      "beat": "payoff", "reward": "humor",
+      "beat": "payoff",
+      "reward": "humor",
       "say": "Hasta anotás que es de Boca. Y que no le hables de River.",
       "onScreen": "NO LE HABLES\n*DE RIVER*",
       "visual": "Aparece una línea nueva en la ficha: 'Hincha de Boca · no hablar de River'. El cliente en la silla sonríe; en el espejo, el corte queda perfecto con brillo.",
@@ -114,7 +146,8 @@
       "sfx": "Risa corta del público (sintetizada); brillo."
     },
     {
-      "beat": "loop", "reward": "challenge",
+      "beat": "loop",
+      "reward": "challenge",
       "say": "¿Te pasó? Comentá BARBER. La próxima vez que te digan…",
       "onScreen": "COMENTÁ\n*BARBER*",
       "visual": "BARBER en una ficha violeta gigante; en los últimos 6 cuadros, el globo 'HACÉMELO COMO LA OTRA VEZ' vuelve a entrar desde la silla, igual que el cuadro 0.",

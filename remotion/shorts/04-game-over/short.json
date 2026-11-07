@@ -14,6 +14,7 @@
     "loop": "El último cuadro es la puerta pixelada con el primer personaje entrando, igual que el cuadro 0. 'Antes de que entre el próximo…' empalma con 'Tres clientes se fueron en diez minutos.'"
   },
   "music": {
+    "preset": "chiptune",
     "style": "Chiptune (onda cuadrada y triangular, ruido de 8 bits) que se acelera; en el giro, el cartucho 'se cuelga' (glitch y silencio); al final, melodía de victoria.",
     "tempo": "128 BPM; sube a 160 antes del giro.",
     "sections": [

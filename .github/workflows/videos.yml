@@ -1,5 +1,6 @@
-# Renderiza los videos en GitHub con la voz de Edge TTS y los sube a videos/render/.
-# Se corre solo cuando cambian los guiones o el motor, o a mano desde la pestaña Actions → "Renderizar videos" → Run workflow.
+# Renderiza los videos con Remotion en GitHub, con la voz de Edge TTS (necesita internet), y los sube a videos/render/.
+# Se corre solo cuando cambian los guiones, el código de los videos o config.js, o a mano desde la pestaña
+# Actions → "Renderizar videos" → Run workflow (ahí se eligen los videos, la voz y la velocidad).
 name: Renderizar videos
 
 on:
@@ -9,16 +10,19 @@ on:
         description: 'Qué videos renderizar (ej: 01,04,10) o "todos"'
         default: todos
       voz:
-        description: 'Voz de Edge TTS (es-AR-TomasNeural, es-MX-JorgeNeural, es-CO-GonzaloNeural...)'
-        default: es-AR-TomasNeural
+        description: 'Voz de Edge TTS'
+        default: es-CO-GonzaloNeural
       velocidad:
-        description: 'Velocidad de la voz (ej: +10%, +0%, -5%)'
-        default: '+10%'
+        description: 'Velocidad de la voz (ej: +22%, +10%, +0%)'
+        default: '+22%'
   push:
     branches: [main]
     paths:
-      - 'videos/guiones/**'
-      - 'videos/engine/**'
+      - 'remotion/shorts/**'
+      - 'remotion/src/**'
+      - 'remotion/audio/**'
+      - 'remotion/scripts/**'
+      - 'remotion/package.json'
       - 'videos/config.js'
       - '.github/workflows/videos.yml'
 
@@ -44,7 +48,7 @@ jobs:
   render:
     needs: lista
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     strategy:
       fail-fast: false
       matrix:
@@ -53,25 +57,28 @@ jobs:
       - uses: actions/checkout@v4
         with:
           sparse-checkout: |
-            videos/engine
-            videos/guiones
+            remotion
+            videos/config.js
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
+          cache-dependency-path: remotion/package-lock.json
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Instalar ffmpeg, Playwright y Python
+      - name: Instalar ffmpeg, dependencias y el navegador de Remotion
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-          cd videos/engine && npm install --no-save --no-package-lock playwright@1.49.1 && npx playwright install --with-deps chromium
-          pip install -q edge-tts numpy soundfile num2words
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji
+          pip install -q edge-tts numpy soundfile scipy num2words
+          cd remotion && npm ci --no-audit --no-fund && npx remotion browser ensure
       - name: Renderizar ${{ matrix.id }}
         env:
           VOZ_MOTOR: edge
-          VOZ_EDGE: ${{ github.event.inputs.voz || 'es-AR-TomasNeural' }}
-          VOZ_RATE: ${{ github.event.inputs.velocidad || '+10%' }}
-        run: cd videos && node engine/render.mjs ${{ matrix.id }}
+          VOZ_EDGE: ${{ github.event.inputs.voz || 'es-CO-GonzaloNeural' }}
+          VOZ_RATE: ${{ github.event.inputs.velocidad || '+22%' }}
+          CONCURRENCIA: '4'
+        run: cd remotion && node scripts/render.mjs ${{ matrix.id }}
       - uses: actions/upload-artifact@v4
         with:
           name: video-${{ matrix.id }}
@@ -95,5 +102,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add videos/render/*.mp4
           if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
-          git commit -m "Videos renderizados con voz ${{ github.event.inputs.voz || 'es-AR-TomasNeural' }}"
-          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
+          git commit -m "Videos renderizados con Remotion y voz ${{ github.event.inputs.voz || 'es-CO-GonzaloNeural' }} [skip ci]"
+          # se suben a la misma rama desde la que se corrió el workflow (main o una rama de trabajo)
+          rama="${{ github.ref_name }}"
+          for i in 1 2 3; do git pull --rebase -q origin "$rama" && git push -q origin "HEAD:$rama" && break; sleep 5; done

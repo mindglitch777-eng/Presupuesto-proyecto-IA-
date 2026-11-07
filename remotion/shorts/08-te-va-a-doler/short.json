@@ -14,6 +14,7 @@
     "loop": "El último cuadro vuelve al vidrio que se rompe con 'ESTE VIDEO TE VA A DOLER', igual que el cuadro 0. 'Aunque duela' empalma con 'este video te va a doler'."
   },
   "music": {
+    "preset": "industrial",
     "style": "Industrial/phonk: 808 distorsionado, metales golpeados, alarma de fondo; en el giro, todo se frena y entra un acorde enorme en mayor; al final, phonk brillante.",
     "tempo": "140 BPM.",
     "sections": [

@@ -14,6 +14,7 @@
     "loop": "El último cuadro vuelve a la silla vacía bajo la luz de persiana, igual que el cuadro 0. 'Porque lo peor no es un mal corte…' empalma con '¿Sabés qué es peor que un mal corte?'."
   },
   "music": {
+    "preset": "noir",
     "style": "Jazz noir sintetizado (contrabajo pulsado, platillo con escobilla, saxo de onda cuadrada filtrada) que se transforma en trap con 808 en el giro; el final en mayor.",
     "tempo": "90 BPM; el trap del giro a 140 BPM (doble tiempo).",
     "sections": [

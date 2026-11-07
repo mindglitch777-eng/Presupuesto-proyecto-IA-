@@ -14,6 +14,7 @@
     "loop": "El último cuadro es la rueda de sospechosos con el cuaderno en la esquina, igual que el cuadro 0. 'Fijate quién está en tu mostrador…' empalma con 'Hay un ladrón en tu barbería.'"
   },
   "music": {
+    "preset": "suspenso",
     "style": "Suspenso de policial: pizzicato de cuerdas sintetizadas, bajo que camina, golpes de timbal; en el giro, un braam; al final, el mismo tema en mayor con palmas.",
     "tempo": "100 BPM.",
     "sections": [

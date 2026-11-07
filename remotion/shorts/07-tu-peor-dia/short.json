@@ -15,6 +15,7 @@
     "loop": "El último cuadro vuelve a la vista de la montaña rusa con el carrito arrancando la subida, igual que el cuadro 0. 'Tu peor día…' empalma con 'Tu peor día de la semana no es el martes.'"
   },
   "music": {
+    "preset": "feria",
     "style": "Organito de feria sintetizado sobre un beat de house; en el valle del martes, solo grillo y viento; en el giro, el organito se descarrila (tono que cae) y braam; al final, house en mayor.",
     "tempo": "124 BPM.",
     "sections": [

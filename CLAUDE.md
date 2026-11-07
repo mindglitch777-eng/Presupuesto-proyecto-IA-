@@ -20,24 +20,24 @@ Diez videos verticales (TikTok, YouTube Shorts y Reels) para validar si las barb
 - **Lo que la app hace de verdad:** turnos online con seña por transferencia, fila virtual con QR, caja del día, ficha de cada cliente, lista de clientes que no volvieron con botón para escribirles por WhatsApp (link wa.me, sin API) y tarjeta de puntos.
 
 ## Estado actual
-- **Guiones nuevos (los que mandan):** `remotion/shorts/NN-nombre/short.json`, uno por video, con dirección completa: voz, pantalla, imagen, cámara, transición, efectos y música. Siguen `docs/REGLAS-SHORTS.md` (reglas de engagement del dueño). Para leerlos: `GUIONES-VIRALES.md`, que se genera con `cd remotion && node scripts/guiones-md.mjs`.
-- **Control antes del render:** `cd remotion && node scripts/check-short.mjs` revisa el largo del gancho, las palabras en pantalla, que no se repita la recompensa, la posición del giro, el loop y el cierre con BARBER.
-- **Montos en los guiones:** `{$corte*12}` es plata y `{#diasPrueba}` es un número; salen de `videos/config.js` (ver `remotion/scripts/montos.mjs`).
-- **Cada video es a medida:** se reutilizan herramientas (voz, subtítulos, cámara, efectos, 3D), nunca escenas fijas.
-- `GUIONES.md` tiene la primera versión de los 10 guiones.
-- `videos/guiones/01.js` a `05.js` son la versión nueva, más fuerte, escrita para el motor viejo con plantillas (`videos/engine/plantillas.js`). Sirven como texto base para Remotion. Del 06 al 10 hay que reescribirlos con el mismo estilo.
-- `videos/engine/` es el motor viejo (canvas + Playwright). Queda como referencia; los videos nuevos se hacen en Remotion.
-- `remotion/` es la base del proyecto Remotion: dependencias, `remotion.config.ts` y una composición de prueba. Ya renderiza.
-- `.github/workflows/videos.yml` renderiza con el motor viejo. Hay que cambiarlo para que use Remotion.
-- `videos/engine/voz.py` ya genera la voz con Edge y el tiempo de cada palabra. Se puede reutilizar.
+- **Los 10 videos están hechos en Remotion**, cada uno a medida: `remotion/src/shorts/v01.tsx` … `v10.tsx`, con su estilo propio (cine negro, chat con glitch, papel, arcade, concurso de TV, tablero de detective, montaña rusa 3D, calculadora 3D, cabeza con cajones, casting). Se registran en `remotion/src/Root.tsx` (`v01` … `v10`).
+- **Guiones (los que mandan):** `remotion/shorts/NN-nombre/short.json`, con dirección completa: voz, pantalla, imagen, cámara, transición, efectos y música (`music.preset`). Siguen `docs/REGLAS-SHORTS.md` (reglas de engagement del dueño). Para leerlos: `GUIONES-VIRALES.md`, que se genera con `cd remotion && node scripts/guiones-md.mjs`.
+- **Control antes del render:** `node scripts/check-short.mjs` revisa el largo del gancho, las palabras en pantalla, que no se repita la recompensa, la posición del giro, el loop y el cierre con BARBER.
+- **Montos en los guiones:** `{$corte*12}` es plata y `{#diasPrueba}` es un número; salen de `videos/config.js` (ver `remotion/scripts/montos.mjs`). `prep.mjs` los copia a `remotion/public/config.json` para las escenas.
+- **Herramientas compartidas** (`remotion/src/lib/`): `Short` (arma el video, transiciones, subtítulos y el empalme del loop), `Placa` (texto sincronizado con la voz, palabras clave con golpe), `Subtitulos` (estilo TikTok, se ocultan si repiten la placa), `fx` (cámara, sacudones, rayos, partículas, confeti, contador de plata…), `Celular` (pantallas de la app), `Split` (SIN/CON), `Cierre`, `tres` (3D: silla, tijera, billetes, carteles, vóxeles), `transiciones`, `Sfx`.
+- **Audio** (`remotion/audio/`): `voz.py` (Edge TTS con tiempo por palabra; `VOZ_MOTOR=estimado` sin internet, en silencio, solo para armar), `musica.py` (un estilo por video, cambia en el giro y se frena antes con silencio), `sfx.py` (55 efectos sintetizados), `mezcla.py` (voz + música con ducking). Los efectos los pone cada escena con `<Sfx>` en su cuadro exacto. `render.mjs` deja el volumen final en −14 LUFS.
+- **Render:** `.github/workflows/videos.yml` renderiza con Remotion (10 en paralelo, ~12 min cada uno) y sube los MP4 a `videos/render/` **en la misma rama desde la que se corrió**.
+- `videos/engine/` y `videos/guiones/` son el motor viejo: quedan como referencia.
 
 ## Comandos
 ```bash
 cd remotion && npm install
-npx remotion studio                 # vista previa
-npx remotion still Test out/a.png   # captura de un cuadro
+VOZ_MOTOR=estimado node scripts/prep.mjs todos   # voz/tiempos/audio (sin internet: voz estimada en silencio)
+npx remotion studio                              # vista previa
+node scripts/hoja.mjs 01                         # capturas de cada escena → out/01-…-hoja.jpg (--guias marca zonas seguras)
+node scripts/render.mjs 01                       # video completo → ../videos/render/01.mp4 (RENDER_DIR=out/x para pruebas)
 # Sin el Chrome de Remotion (por ejemplo en una nube sin internet), usar uno local:
-REMOTION_BROWSER=/ruta/a/chrome npx remotion still Test out/a.png
+REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell node scripts/hoja.mjs 01
 ```
 
 ## Commits

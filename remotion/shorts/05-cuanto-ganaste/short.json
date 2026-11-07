@@ -14,6 +14,7 @@
     "loop": "El último cuadro vuelve al escenario con el reloj en 3, igual que el cuadro 0. 'Respondé en tres segundos: ¿cuánto ganaste…' empalma con el gancho."
   },
   "music": {
+    "preset": "concurso",
     "style": "Jingle de concurso de TV (metales sintéticos, redoblante); chicharra de error; en el giro, drone de rayos X con latido; al final, fanfarria de premio.",
     "tempo": "120 BPM.",
     "sections": [
