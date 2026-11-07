@@ -97,7 +97,7 @@
     {
       "beat": "reward",
       "reward": "humor",
-      "say": "Y el de la silla te mira por el espejo. Con media cabeza hecha.",
+      "say": "Y el de la silla te mira. Con media cabeza hecha.",
       "onScreen": "*MEDIA CABEZA*\nHECHA",
       "visual": "Reflejo en el espejo: el cliente con media cabeza rapada y la otra mitad peluda, mirándote fijo con una ceja levantada; un globo de chat le tapa la cara justo a la mitad.",
       "camera": "Plano por encima del hombro hacia el espejo; zoom lento a la ceja.",
@@ -128,7 +128,7 @@
     {
       "beat": "reward",
       "reward": "reveal",
-      "say": "Ahora imaginá un link en tu Instagram. El cliente elige el horario solo.",
+      "say": "Imaginá un link en tu Instagram. El cliente elige solo.",
       "onScreen": "EL CLIENTE\n*ELIGE SOLO*",
       "visual": "Celular 3D limpio, violeta y blanco: la grilla de horarios libres; un dedo toca 'Jueves 18:30', el turno queda confirmado con un tilde que explota en partículas.",
       "camera": "El celular gira de perfil a frente; push in a la grilla.",
@@ -138,7 +138,7 @@
     {
       "beat": "payoff",
       "reward": "contrast",
-      "say": "Sin link: cuarenta y siete mensajes. Con link: tres. Y vos, con la tijera.",
+      "say": "Sin link: cuarenta y siete. Con link: tres. Y vos, con la tijera.",
       "onScreen": "*47* vs *3*",
       "visual": "Pantalla partida: a la izquierda la montaña de globos que tiembla y un barbero tapado; a la derecha, tres globitos y un barbero cortando tranquilo. El 47 se derrite hasta convertirse en 3. Al final, la tijera 3D cromada gira en el centro del lado derecho con un brillo.",
       "camera": "La línea del medio se corre hacia la izquierda y aplasta la montaña.",
@@ -148,7 +148,7 @@
     {
       "beat": "loop",
       "reward": "challenge",
-      "say": "Comentá BARBER y te paso el link. Antes de los próximos cuarenta y siete…",
+      "say": "Comentá BARBER y te paso el link.",
       "onScreen": "COMENTÁ\n*BARBER*",
       "visual": "BARBER latiendo con confeti violeta; en los últimos 6 cuadros la pantalla vuelve al chat vacío y entra el primer globo '¿tenés turno?', igual que el cuadro 0.",
       "camera": "Termina en el plano del cuadro 0.",

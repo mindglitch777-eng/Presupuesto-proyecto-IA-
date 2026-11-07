@@ -67,7 +67,7 @@
     {
       "beat": "reward",
       "reward": "reveal",
-      "say": "Venía cada quince días. Degradé bajo. Puntual.",
+      "say": "Venía cada quince días. Degradé bajo.",
       "onScreen": "CADA *15 DÍAS*",
       "visual": "Expediente que se abre: un calendario donde cada 15 días se marca una tijerita verde, y después las marcas se cortan de golpe y siguen los días vacíos en gris.",
       "camera": "Cenital del expediente; la cámara recorre el calendario.",
@@ -77,7 +77,7 @@
     {
       "beat": "reward",
       "reward": "humor",
-      "say": "No se quejó. No dejó una reseña. Ni un emoji. Nada.",
+      "say": "No se quejó. Ni una reseña. Ni un emoji. Nada.",
       "onScreen": "NI UN\n*EMOJI*",
       "visual": "Tres pruebas en bolsitas de evidencia, vacías: 'QUEJA: —', 'RESEÑA: —', 'EMOJI: —'. La última bolsita tiene un emoji triste que se desinfla.",
       "camera": "Un plano por bolsita.",
@@ -107,7 +107,7 @@
     {
       "beat": "reward",
       "reward": "number",
-      "say": "{$corte*120} por año. Seguro se fueron a lo de enfrente.",
+      "say": "{$corte*120} por año. Seguro se fueron enfrente.",
       "onScreen": "*{$corte*120}*\nPOR AÑO",
       "pause_after": 0.4,
       "visual": "El contador rojo cae a −{$corte*120} y la pantalla se agrieta; un hilo rojo sale disparado hacia la foto de la barbería de enfrente (el engaño).",
@@ -128,7 +128,7 @@
     {
       "beat": "reward",
       "reward": "reveal",
-      "say": "Imaginá una lista: Juan, sesenta y tres días. Lucas, cuarenta y uno. Y un botón.",
+      "say": "Imaginá una lista: Juan, sesenta y tres días. Y un botón.",
       "onScreen": "*JUAN · 63 DÍAS*",
       "visual": "Celular 3D con la lista 'Hace rato que no vienen': Juan · 63 días, Lucas · 41 días, Nico · 35 días; al lado de cada uno, un botón verde de mensaje.",
       "camera": "El celular sube desde abajo; push in a la fila de Juan.",
@@ -138,7 +138,7 @@
     {
       "beat": "payoff",
       "reward": "payoff",
-      "say": "Un toque: '¿Juan, te guardo un turno?'. Sin lista, es un recuerdo. Con lista, un mensaje.",
+      "say": "Un toque: '¿Juan, te guardo un turno?'. Sin lista, un recuerdo. Con lista, un mensaje.",
       "onScreen": "¿TE GUARDO\n*UN TURNO?*",
       "visual": "Se abre un chat verde genérico con el mensaje ya escrito; se envía con un 'fiuu'. En el tablero de detective, el cartel de Juan pasa de 'BUSCADO' a 'ENCONTRADO' con un sello verde.",
       "camera": "Push in al botón de enviar; corte al sello.",
@@ -148,7 +148,7 @@
     {
       "beat": "loop",
       "reward": "challenge",
-      "say": "¿Cuántos Juanes tenés? Comentá BARBER. Porque ahora mismo, otro Juan…",
+      "say": "¿Cuántos Juanes tenés? Comentá BARBER. Porque ahora, otro Juan…",
       "onScreen": "COMENTÁ\n*BARBER*",
       "visual": "BARBER escrito con hilos rojos sobre el corcho; en los últimos 6 cuadros cae un nuevo cartel 'BUSCADO: JUAN' y la chinche lo clava, igual que el cuadro 0.",
       "camera": "Termina en el plano del cuadro 0.",

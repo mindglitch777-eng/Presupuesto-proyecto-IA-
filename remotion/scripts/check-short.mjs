@@ -9,7 +9,7 @@ import { cargarConfig, expandir } from './montos.mjs';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const REWARDS = ['paradox', 'number', 'reveal', 'quote', 'data', 'consequence', 'twist', 'contrast', 'payoff', 'challenge', 'humor'];
 const BEATS = ['hook', 'reward', 'twist', 'payoff', 'loop'];
-const PALABRAS_POR_SEG = 3.5; // Edge es-CO-GonzaloNeural a +22 %, estimado desde los renders viejos; el render usa la duración real.
+const PALABRAS_POR_SEG = 2.9; // medido con Edge es-CO-GonzaloNeural a +22 % en los renders reales (incluye pausas).
 
 const cfg = cargarConfig();
 const palabras = (t) => t.replace(/\[\[-?\d+\]\]/g, ' m m m m ').replace(/\{\{\d+\}\}/g, ' n n ').replace(/[*¿?¡!.,:;"'()…—–-]/g, ' ').split(/\s+/).filter(Boolean);
