@@ -1,7 +1,7 @@
 # Videos para barberías — instrucciones para Claude Code
 
 ## LO MÁS IMPORTANTE
-**`CAMPANA.md` es la fuente de verdad:** los 10 guiones, la REGLA N.º 1 del gancho y la dirección visual. Todo lo que contradiga ese archivo queda viejo. Los guiones de `GUIONES.md` y `videos/guiones/` NO se usan más.
+**`VISUAL.md` manda en todo lo visual** (estética real y oscura con clips de Pexels; nada de dibujitos). Los guiones nuevos los escribe otra IA en el formato de `VISUAL.md`. `CAMPANA.md` queda como referencia del gancho y del concepto. Todo lo que contradiga ese archivo queda viejo. Los guiones de `GUIONES.md` y `videos/guiones/` NO se usan más.
 
 ## Objetivo
 Diez videos verticales (TikTok, YouTube Shorts y Reels) para validar si las barberías argentinas quieren una app de gestión. Cada video tiene que dejar claro **qué es la app y qué problema resuelve**. Todo se hace con código.
@@ -23,7 +23,7 @@ Diez videos verticales (TikTok, YouTube Shorts y Reels) para validar si las barb
 - **Lo que la app hace de verdad:** turnos online con seña por transferencia, fila virtual con QR, caja del día, ficha de cada cliente, lista de clientes que no volvieron con botón para escribirles por WhatsApp (link wa.me, sin API) y tarjeta de puntos.
 
 ## Estado actual
-- **`CAMPANA.md`:** versión aprobada. Nombre de la app: **Silla Llena**. Estética: dibujo animado 2D tipo sticker, con personajes en SVG y fondos de un color saturado; nada de fondos negros ni grises.
+- **El video 1 en dibujo animado fue rechazado** por infantil, poco serio y por no ocupar la pantalla. La estética nueva está en `VISUAL.md`. Nombre de la app: **Silla Llena**.
 - **La versión anterior en Remotion,** en la rama `ccr-2a2eeb48-jv57ra`, fue rechazada: no se entendía de qué se trataba, era oscura, no tenía personajes y los textos se pisaban. Se puede reutilizar código técnico de ahí (voz, audio, workflow), pero no el estilo.
 - **`remotion/`:** la base del proyecto en `main`.
 - **`videos/engine/`:** `voz.py` (Edge TTS + tiempos por palabra), `musica.py` y `sfx.py` se pueden reutilizar.
