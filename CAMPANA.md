@@ -14,7 +14,7 @@ Revisé cuadro por cuadro los videos que armó Claude Code:
 
 Lo que cambia ahora:
 - **Un concepto de campaña**, con nombre y personajes.
-- **Un formato distinto por video:** tier list, tutorial irónico, videojuego, ticket de supermercado, objeto que habla, test, POV del cliente, carrera entre dos barberías.
+- **Un formato distinto por video:** tier list, tutorial irónico, videojuego, ticket de supermercado, telenovela, test, POV del cliente, carrera entre dos barberías.
 - **Colores planos saturados** en lugar de negro.
 - **Una sola idea por pantalla.**
 
@@ -181,23 +181,24 @@ Sumar **2 o 3 tomas reales filmadas con tu celular** en una barbería de Santo T
 
 ---
 
-### 4. "Tu silla te odia"
-**Formato:** objeto que habla (rompe el esquema enseguida). **Duración:** ~32 s
+### 4. "Tu cliente te está metiendo los cuernos"
+**Formato:** telenovela. Drama, zooms exagerados y música de "chan chan chaaan". **Duración:** ~35 s · **Colores:** rosa y violeta de telenovela → rojo → verde
 
-| Seg. | Qué se ve | Voz (de la Silla, un poco más grave) | Texto |
+| Seg. | Qué se ve | Voz | Texto |
 |---|---|---|---|
-| 0–1 | Zoom de golpe a una silla vacía que **abre los ojos, enojada**, y mira a cámara. | "Tu silla te odia." | **TU SILLA TE ODIA** |
-| 1–4 | Se cruza de brazos (tiene apoyabrazos). | "Ey, sí, vos. Soy tu silla. Y tengo razón para odiarte." | **Y TIENE RAZÓN** |
-| 4–9 | Pasan siluetas de fantasmas al lado sin sentarse. | "El sábado me dejaron plantada tres veces." | **PLANTADA x3** |
-| 9–13 | Le crecen telarañas y suena un grillo. | "El martes no se sentó nadie en todo el día." | **MARTES: 0** |
-| 13–16 | Un cliente la mira, ve la fila y se va. | "Y el pibe de la fila se fue sin probarme." | — |
-| 16–21 | La Silla saca una calculadora. | "¿Sabés cuánto vale cada hora que estoy vacía? Veinte mil pesos. Hoy estuve vacía cinco horas." | **−$100.000 HOY** |
-| 21–27 | Saca un celular con el logo. Íconos que aparecen: seña, QR, puntos dobles. | "Instalá esto. Seña para los fantasmas, fila con QR y puntos dobles los martes." | **SILLA LLENA** |
-| 27–29 | Alguien se sienta, la Silla suspira feliz y aparecen corazones. | "Ahhh. Así sí." | — |
-| 29–32 | Cierre. | "Quiero estar llena. Comentá bárber." | **COMENTÁ BARBER** |
+| 0–1 | Triple zoom dramático (zoom, zoom, ZOOM) a la cara del Barbero mirando por la ventana con lluvia, con un "CHAN CHAN CHAAAN" de telenovela. Enfrente, su cliente Juan se ríe en la silla de **OTRO barbero**. | "Tu cliente te está metiendo los cuernos." | **TU CLIENTE TE METE LOS CUERNOS** |
+| 1–3 | Se le cae la tijera al piso y se rompe un vidrio. | "Con la barbería de enfrente. Y la culpa es tuya." | **Y LA CULPA ES TUYA** |
+| 3–7 | **Flashback** con filtro sepia y cartel "HACE 2 MESES": Juan venía cada 15 días, se reían y chocaban los puños. Un calendario con tildes verdes. | "Juan venía cada quince días. Era fijo. Era tuyo." | **ERA TUYO** |
+| 7–11 | Pasan los días sin tildes y un contador rojo sube: **45 DÍAS SIN VENIR**. El Barbero corta tranquilo, sin darse cuenta. | "Un día dejó de venir… y vos ni te diste cuenta." | **45 DÍAS** |
+| 11–16 | **Pizarra de detective** con hilo rojo: la foto de Juan, la barbería de enfrente y su celular. Zoom dramático al celular de Juan: un mensaje de la otra barbería: *"¡Juan! Hace rato no venís, ¿te guardo turno el sábado? Te faltan 2 cortes para el gratis 😉"*. | "¿Qué hizo la de enfrente? Le escribió. Le guardó turno. Y le dio puntos." | **LE ESCRIBIERON** |
+| 16–20 | Billetes que vuelan de tu barbería a la de enfrente. Contador: **−$240.000 POR AÑO**. | "Un cliente fijo son doscientos cuarenta mil pesos por año. Y se los llevó la de enfrente." | **−$240.000 / AÑO** |
+| 20–27 | **El giro** con el drop: entra el Celular como superhéroe. Pantalla: "Dejaron de venir: **Juan · 45 días**", toque al botón de WhatsApp y sale *"Che Juan, ¿te guardo un turno?"*. Después, la tarjeta de puntos que se llena. | "Silla Llena te avisa quién dejó de venir. Le escribís con un toque. Y con los puntos, no se va más." | **TE AVISA QUIÉN SE FUE** |
+| 27–31 | Juan vuelve con un ramo de flores y cara de culpa. Corazones y acorde romántico. | (Juan) "Perdoname. No vuelve a pasar." | **VOLVIÓ** |
+| 31–35 | Cierre. Al final, el zoom dramático se repite sobre el cartel. | "Que no te metan los cuernos. Comentá bárber." | **COMENTÁ BARBER** |
 
-**Re-ganchos:** cada queja es una escena distinta (fantasmas, telarañas, el pibe que se va), y la calculadora con el total del día.
-**Momento épico:** la silla abriendo los ojos en el primer segundo.
+**Re-ganchos:** un zoom dramático en cada revelación, el contador de días que sube, la pizarra de detective y el mensaje de la otra barbería, que es la "prueba de la infidelidad".
+**Momento épico:** el zoom triple del principio y el mensaje revelado en el celular de Juan.
+**Por qué engancha:** todos los barberos tuvieron un cliente que se fue a otro lado, se ríen, lo comparten y etiquetan a otro barbero.
 
 ---
 
@@ -325,7 +326,7 @@ Sumar **2 o 3 tomas reales filmadas con tu celular** en una barbería de Santo T
 
 ## Orden de publicación sugerido
 **Semana 1:** 1 (balde) · 5 (tier list) · 9 (23:47) · 3 (ticket) · 10 (fundador)
-**Semana 2:** 2 (A vs B) · 7 (videojuego) · 4 (silla que habla) · 6 (tutorial) · 8 (test)
+**Semana 2:** 2 (A vs B) · 4 (cuernos) · 7 (videojuego) · 6 (tutorial) · 8 (test)
 
 El video 1 va primero porque explica todo el producto. El 10 cierra la primera semana, cuando ya hay gente que vio los otros.
 
