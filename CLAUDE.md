@@ -1,5 +1,8 @@
 # Videos para barberías — instrucciones para Claude Code
 
+## LO MÁS IMPORTANTE
+**`CAMPANA.md` es la fuente de verdad:** los 10 guiones, la REGLA N.º 1 del gancho y la dirección visual. Todo lo que contradiga ese archivo queda viejo. Los guiones de `GUIONES.md` y `videos/guiones/` NO se usan más.
+
 ## Objetivo
 Diez videos verticales (TikTok, YouTube Shorts y Reels) para validar si las barberías argentinas quieren una app de gestión. Cada video tiene que dejar claro **qué es la app y qué problema resuelve**. Todo se hace con código.
 
@@ -20,25 +23,30 @@ Diez videos verticales (TikTok, YouTube Shorts y Reels) para validar si las barb
 - **Lo que la app hace de verdad:** turnos online con seña por transferencia, fila virtual con QR, caja del día, ficha de cada cliente, lista de clientes que no volvieron con botón para escribirles por WhatsApp (link wa.me, sin API) y tarjeta de puntos.
 
 ## Estado actual
-- **Los 10 videos están hechos en Remotion**, cada uno a medida: `remotion/src/shorts/v01.tsx` … `v10.tsx`, con su estilo propio (cine negro, chat con glitch, papel, arcade, concurso de TV, tablero de detective, montaña rusa 3D, calculadora 3D, cabeza con cajones, casting). Se registran en `remotion/src/Root.tsx` (`v01` … `v10`).
-- **Guiones (los que mandan):** `remotion/shorts/NN-nombre/short.json`, con dirección completa: voz, pantalla, imagen, cámara, transición, efectos y música (`music.preset`). Siguen `docs/REGLAS-SHORTS.md` (reglas de engagement del dueño). Para leerlos: `GUIONES-VIRALES.md`, que se genera con `cd remotion && node scripts/guiones-md.mjs`.
-- **Control antes del render:** `node scripts/check-short.mjs` revisa el largo del gancho, las palabras en pantalla, que no se repita la recompensa, la posición del giro, el loop y el cierre con BARBER.
-- **Montos en los guiones:** `{$corte*12}` es plata y `{#diasPrueba}` es un número; salen de `videos/config.js` (ver `remotion/scripts/montos.mjs`). `prep.mjs` los copia a `remotion/public/config.json` para las escenas.
-- **Herramientas compartidas** (`remotion/src/lib/`): `Short` (arma el video, transiciones, subtítulos y el empalme del loop), `Placa` (texto sincronizado con la voz, palabras clave con golpe), `Subtitulos` (estilo TikTok, se ocultan si repiten la placa), `fx` (cámara, sacudones, rayos, partículas, confeti, contador de plata…), `Celular` (pantallas de la app), `Split` (SIN/CON), `Cierre`, `tres` (3D: silla, tijera, billetes, carteles, vóxeles), `transiciones`, `Sfx`.
-- **Audio** (`remotion/audio/`): `voz.py` (Edge TTS con tiempo por palabra; `VOZ_MOTOR=estimado` sin internet, en silencio, solo para armar), `musica.py` (un estilo por video, cambia en el giro y se frena antes con silencio), `sfx.py` (55 efectos sintetizados), `mezcla.py` (voz + música con ducking). Los efectos los pone cada escena con `<Sfx>` en su cuadro exacto. `render.mjs` deja el volumen final en −14 LUFS.
-- **Render:** `.github/workflows/videos.yml` renderiza con Remotion (10 en paralelo, ~12 min cada uno) y sube los MP4 a `videos/render/` **en la misma rama desde la que se corrió**.
-- `videos/engine/` y `videos/guiones/` son el motor viejo: quedan como referencia.
+- **`CAMPANA.md`:** versión aprobada. Nombre de la app: **Silla Llena**. Estética: dibujo animado 2D tipo sticker, con personajes en SVG y fondos de un color saturado; nada de fondos negros ni grises.
+- **La versión anterior en Remotion,** en la rama `ccr-2a2eeb48-jv57ra`, fue rechazada: no se entendía de qué se trataba, era oscura, no tenía personajes y los textos se pisaban. Se puede reutilizar código técnico de ahí (voz, audio, workflow), pero no el estilo.
+- **`remotion/`:** la base del proyecto en `main`.
+- **`videos/engine/`:** `voz.py` (Edge TTS + tiempos por palabra), `musica.py` y `sfx.py` se pueden reutilizar.
+- **`.github/workflows/videos.yml`:** hay que hacer que renderice con Remotion.
+
+## Forma de trabajo
+1. **Primero un solo video completo** (el 1, "Tu barbería se está muriendo"). Antes de seguir, el usuario lo tiene que aprobar.
+2. **Antes de entregar,** sacar capturas de cada escena y revisarlas contra la REGLA N.º 1 y la dirección visual de `CAMPANA.md`.
 
 ## Comandos
 ```bash
 cd remotion && npm install
-VOZ_MOTOR=estimado node scripts/prep.mjs todos   # voz/tiempos/audio (sin internet: voz estimada en silencio)
-npx remotion studio                              # vista previa
-node scripts/hoja.mjs 01                         # capturas de cada escena → out/01-…-hoja.jpg (--guias marca zonas seguras)
-node scripts/render.mjs 01                       # video completo → ../videos/render/01.mp4 (RENDER_DIR=out/x para pruebas)
+npx remotion studio                 # vista previa
+npx remotion still Test out/a.png   # captura de un cuadro
 # Sin el Chrome de Remotion (por ejemplo en una nube sin internet), usar uno local:
-REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell node scripts/hoja.mjs 01
+REMOTION_BROWSER=/ruta/a/chrome npx remotion still Test out/a.png
 ```
 
 ## Commits
 Si el commit no tiene que disparar el render en GitHub, agregar `[skip ci]` al mensaje.
+
+## Herramientas técnicas que ya existen (rama `ccr-2a2eeb48-jv57ra`)
+- `remotion/audio/`: voz Edge con tiempo por palabra (`voz.py`, con `VOZ_MOTOR=estimado` para armar sin internet), música por estilo con silencio y "drop" en el giro (`musica.py`), efectos sintetizados (`sfx.py`) y mezcla con ducking (`mezcla.py`).
+- `remotion/scripts/`: `prep.mjs` (voz, línea de tiempo y audio), `render.mjs` (video completo a −14 LUFS), `hoja.mjs` (capturas para revisar) y `check-short.mjs`.
+- Los guiones de la campaña van en `remotion/shorts/NN-nombre/short.json`. Los de la versión rechazada están en `remotion/shorts-viejos/`.
+- El workflow `videos.yml` renderiza con Remotion y sube los MP4 a la misma rama desde la que se corrió.
