@@ -4,7 +4,9 @@
   "feature": "Silla Llena entera: seña (fantasma), fila con QR (la fila) y lista de los que no volvieron (el olvido)",
   "belief_broken": "Que la barbería anda bien porque hay trabajo. En realidad se escapa la plata por tres agujeros que no ves.",
   "fiction": true,
-  "sources": ["Guion 1 de CAMPANA.md. Montos de ejemplo con corte a $10.000 (videos/config.js): 12 turnos fantasma, 24 que se van de la fila y 6 cortes de clientes que no volvieron por mes."],
+  "sources": [
+    "Guion 1 de CAMPANA.md. Montos de ejemplo con corte a $10.000 (videos/config.js): 12 turnos fantasma, 24 que se van de la fila y 6 cortes de clientes que no volvieron por mes."
+  ],
   "direction": {
     "concept": "Metáfora médica: la barbería está en terapia intensiva. El monitor cae a cero, se rompe y adentro hay un balde de plata con 3 agujeros. Cada agujero es un villano (Fantasma, Impaciente, Olvido). En el giro, el Celular de Silla Llena entra como superhéroe y tapa los tres agujeros con parches. El balde desborda y el monitor vuelve a latir.",
     "look": "Dibujo animado 2D tipo sticker, contorno negro grueso, fondos de un solo color saturado que cambian en cada escena: celeste → rojo → violeta → verde. Texto gigante redondo con contorno negro y palabra clave en caja amarilla.",
@@ -16,9 +18,18 @@
     "style": "Beat tenso con pluck en menor; se frena antes del giro y entra un drop con todo en mayor.",
     "tempo": "128 BPM",
     "sections": [
-      { "at": "escenas 1-6", "cue": "beat tenso" },
-      { "at": "escena 6", "cue": "silencio de 0,4 s" },
-      { "at": "escena 7 (giro)", "cue": "drop" }
+      {
+        "at": "escenas 1-6",
+        "cue": "beat tenso"
+      },
+      {
+        "at": "escena 6",
+        "cue": "silencio de 0,4 s"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "drop"
+      }
     ],
     "mix": "Voz al frente, música −10 dB bajo la voz, −14 LUFS."
   },
@@ -26,12 +37,18 @@
     "title": "Tu barbería se está muriendo (y no lo ves)",
     "cover": "SE ESTÁ MURIENDO",
     "caption": "3 agujeros por donde se te va la plata 💸 Montos de ejemplo con corte a $10.000.",
-    "hashtags": ["#barberia", "#barbero", "#barberiaargentina", "#barberos"],
+    "hashtags": [
+      "#barberia",
+      "#barbero",
+      "#barberiaargentina",
+      "#barberos"
+    ],
     "pinned": "Comentá BARBER y te paso Silla Llena 14 días gratis."
   },
   "scenes": [
     {
-      "beat": "hook", "reward": "paradox",
+      "beat": "hook",
+      "reward": "paradox",
       "say": "Tu barbería se está muriendo.",
       "onScreen": "TU BARBERÍA\n*SE ESTÁ MURIENDO*",
       "visual": "Cuadro 0: monitor de hospital con el cartel TU BARBERÍA, pip pip y la línea que cae a plano. Fondo rojo que late. Texto gigante y voz juntos en el cuadro 1.",
@@ -40,34 +57,41 @@
       "sfx": "pip, pip, flatline."
     },
     {
-      "beat": "reward", "reward": "reveal",
+      "beat": "reward",
+      "reward": "reveal",
       "say": "Y no te das cuenta. Se te escapa la plata por tres agujeros.",
       "onScreen": "*3 AGUJEROS*",
       "visual": "Del monitor roto cae un balde gigante lleno de billetes que chorrea plata por 3 agujeros numerados.",
       "camera": "El balde cae y rebota; zoom a cada agujero cuando se numera.",
       "transition": "Zoom al agujero 1.",
-      "sfx": "golpe del balde, chorritos de plata."
+      "sfx": "golpe del balde, chorritos de plata.",
+      "hold": 0.5
     },
     {
-      "beat": "reward", "reward": "number",
+      "beat": "reward",
+      "reward": "number",
       "say": "Uno: el que reserva y no viene. {$corte*12} por mes.",
       "onScreen": "EL FANTASMA\n*−{$corte*12}*",
       "visual": "El Fantasma sale por el agujero 1 con billetes en los brazos, saluda burlón y se va flotando. Contador rojo.",
       "camera": "Seguimiento del fantasma; golpe en el número.",
       "transition": "El fantasma cruza la pantalla y se lleva la escena.",
-      "sfx": "uuuh del fantasma, registradora al revés, golpe."
+      "sfx": "uuuh del fantasma, registradora al revés, golpe.",
+      "hold": 0.4
     },
     {
-      "beat": "reward", "reward": "consequence",
+      "beat": "reward",
+      "reward": "consequence",
       "say": "Dos: el que ve la fila y se va. {$corte*24}.",
       "onScreen": "LA FILA\n*−{$corte*24}*",
       "visual": "El Impaciente mira el reloj, ve una fila de 4, resopla y se tira de cabeza por el agujero 2.",
       "camera": "Corte al reloj, corte a la fila, sacudón cuando se tira.",
       "transition": "Billete que vuela a cámara.",
-      "sfx": "tic tac, resoplido, chapuzón."
+      "sfx": "tic tac, resoplido, chapuzón.",
+      "hold": 0.4
     },
     {
-      "beat": "reward", "reward": "reveal",
+      "beat": "reward",
+      "reward": "reveal",
       "say": "Tres: el que dejó de venir, y nadie lo llamó.",
       "onScreen": "EL OLVIDO\n*−{$corte*6}*",
       "visual": "Un cliente se vuelve transparente mientras vuelan hojas de calendario y su celular no suena.",
@@ -76,41 +100,49 @@
       "sfx": "hojas, viento."
     },
     {
-      "beat": "reward", "reward": "number",
+      "beat": "reward",
+      "reward": "number",
       "say": "{$corte*42} por mes.",
       "onScreen": "*−{$corte*42}*\nPOR MES",
       "pause_after": 0.4,
       "visual": "El nivel del balde baja de golpe, sacudón, la Silla llora al lado y el Barbero se agarra la cabeza. El monitor vuelve: piiiii.",
       "camera": "Sacudón fuerte en el número.",
       "transition": "Silencio y corte.",
-      "sfx": "golpe grave, llanto de la silla, piiiii."
+      "sfx": "golpe grave, llanto de la silla, piiiii.",
+      "hold": 0.7
     },
     {
-      "beat": "twist", "reward": "twist",
+      "beat": "twist",
+      "reward": "twist",
       "say": "Ahora mirá. Seña para el fantasma. Fila con QR. Y la lista de los que no volvieron.",
       "onScreen": "*SEÑA* · *QR* · *LISTA*",
       "visual": "Drop. Entra el Celular de Silla Llena volando como superhéroe y tira tres parches que tapan los agujeros con un PLAF: Seña · Fila con QR · Lista de clientes. Cada parche se ve primero en la pantalla del celular.",
       "camera": "Golpe de cámara en cada parche, con el beat.",
       "transition": "Corte al balde que desborda.",
-      "sfx": "superhéroe, plaf x3."
+      "sfx": "superhéroe, plaf x3.",
+      "hold": 0.7
     },
     {
-      "beat": "payoff", "reward": "payoff",
+      "beat": "payoff",
+      "reward": "payoff",
       "say": "Silla Llena. La app que tapa los tres agujeros.",
       "onScreen": "*SILLA LLENA*",
       "visual": "El balde se llena hasta desbordar, los billetes explotan como confeti, el monitor vuelve a latir y aparece el logo de Silla Llena con la Silla feliz.",
       "camera": "Zoom out épico.",
       "transition": "Billete a cámara.",
-      "sfx": "lluvia de monedas, registradora, pip pip sano."
+      "sfx": "lluvia de monedas, registradora, pip pip sano.",
+      "hold": 0.5
     },
     {
-      "beat": "loop", "reward": "challenge",
+      "beat": "loop",
+      "reward": "challenge",
       "say": "Comentá BARBER y probala {#diasPrueba} días gratis.",
       "onScreen": "COMENTÁ *BARBER*",
       "visual": "El Barbero feliz señala COMENTÁ BARBER; cartel de 14 DÍAS GRATIS. Al final vuelve el monitor del principio.",
       "camera": "Golpe en BARBER.",
       "transition": "Corte al inicio (loop).",
-      "sfx": "pop, campanita."
+      "sfx": "pop, campanita.",
+      "hold": 0.6
     }
   ]
 }

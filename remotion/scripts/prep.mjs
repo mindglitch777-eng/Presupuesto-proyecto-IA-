@@ -59,7 +59,7 @@ export function prep(id) {
     const pausa = e.pause_after || 0;
     const ultima = i === s.scenes.length - 1;
     const padIn = i === 0 ? 0.05 : PAD_IN;
-    const dur = Math.ceil((padIn + v.dur + PAD_OUT + pausa + (ultima ? COLA : 0)) * FPS);
+    const dur = Math.ceil((padIn + v.dur + PAD_OUT + (e.hold || 0) + pausa + (ultima ? COLA : 0)) * FPS); // hold: acción extra sin voz
     const trans = ultima ? 0 : pausa ? 0 : TRANS;
     escenas.push({
       i, beat: e.beat, reward: e.reward,
@@ -68,7 +68,7 @@ export function prep(id) {
       start, dur, trans,
       vozDesde: Math.round(padIn * FPS),       // cuadro (relativo a la escena) en que arranca la voz
       vozFin: Math.round((padIn + v.dur) * FPS),
-      pausa: pausa ? [Math.round((padIn + v.dur + PAD_OUT) * FPS), dur] : null,
+      pausa: pausa ? [Math.round((padIn + v.dur + PAD_OUT + (e.hold || 0)) * FPS), dur] : null,
       words: juntarMontos(v.words, [...(v.montos || []), { hablado: 'cu erre', ver: 'QR' }, { hablado: 'guasap', ver: 'WhatsApp' }]).map((w) => ({
         w: /^b[aá]rber$/i.test(w.w.replace(/[^\wáéíóú]/g, '')) ? w.w.replace(/b[aá]rber/i, 'BARBER') : w.w,
         n: norm(w.w),
