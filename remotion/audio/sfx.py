@@ -490,6 +490,76 @@ def splash():
     return out
 
 
+def pip():  # bip de monitor de hospital
+    return tone(1046, .12) * env(.12, .002, .2) * np.minimum(1, (0.12 - T(.12)) / .01) * .7
+
+
+def flatline():  # piiiiii del monitor
+    d = 1.6
+    return tone(1046, d) * np.minimum(1, T(d) / .01) * np.minimum(1, (d - T(d)) / .05) * .55
+
+
+def ghost():  # "uuuuh" burlón del fantasma
+    d = 1.1
+    t = T(d)
+    f = 330 * (1 + .25 * np.sin(2 * np.pi * 1.2 * t)) * (1 - .2 * t / d)
+    s = np.sin(2 * np.pi * np.cumsum(f * (1 + .02 * np.sin(2 * np.pi * 6 * t))) / SR)
+    s = s + .3 * np.sin(2 * np.pi * np.cumsum(f * 2) / SR)
+    return reverb(s * np.minimum(1, t / .15) * np.minimum(1, (d - t) / .3) * .6, .8, .3)
+
+
+def plaf():  # parche que pega
+    out = np.zeros(int(SR * .6))
+    at(out, lp(noise(.12), 1500) * env(.12, .001, .04) * 1.5, 0)
+    at(out, sweep(180, 60, .3) * env(.3, .001, .08), 0, 1)
+    return np.tanh(out * 1.6)
+
+
+def superhero():  # entrada del celular: subida + brillo
+    out = np.zeros(int(SR * 1.6))
+    at(out, sweep(300, 2400, .7, 'saw') * np.linspace(.05, .5, int(SR * .7)) * .4, 0)
+    at(out, bp(noise(.7), 800, 6000) * np.linspace(.1, 1, int(SR * .7)) * .5, 0)
+    at(out, chime(), .65, 1)
+    at(out, hit(), .65, .7)
+    return out
+
+
+def huff():  # resoplido
+    d = .5
+    return bp(noise(d), 300, 1800) * np.sin(np.pi * np.clip(T(d) / d, 0, 1)) ** 2 * 1.4
+
+
+def doorbell():  # campanita de la puerta
+    out = np.zeros(int(SR * 1.4))
+    at(out, fm(2637, 3.0, 1.5, 1.2, .5) * .6, 0)
+    at(out, fm(2093, 3.0, 1.5, 1.2, .5) * .6, .12)
+    return out
+
+
+def coins():  # lluvia de monedas
+    out = np.zeros(int(SR * 1.6))
+    for k in range(18):
+        at(out, fm(rng.uniform(1800, 3200), 3.5, 2, .4, .12) * .5, rng.uniform(0, 1.0))
+    return out
+
+
+def drip():  # chorrito de plata que se escapa
+    out = np.zeros(int(SR * 1.0))
+    for k in range(5):
+        at(out, sweep(900, 1600, .06) * env(.06, .001, .02) * .6, k * .17)
+    return out
+
+
+def sob():  # llanto de la silla (sollozo corto)
+    out = np.zeros(int(SR * 1.2))
+    for k in range(3):
+        d = .25
+        f = 520 - k * 40
+        v = np.sin(2 * np.pi * np.cumsum(np.linspace(f, f * .7, int(SR * d))) / SR) * np.sin(np.pi * T(d) / d)
+        at(out, v * .5, k * .3)
+    return out
+
+
 PALETA = {k: v for k, v in dict(globals()).items() if callable(v) and v.__module__ == __name__ and k not in (
     'T', 'env', 'sweep', 'tone', 'noise', 'lp', 'hp', 'bp', 'fast_lp', 'pad', 'at', 'reverb', 'karplus', 'fm', 'main')}
 

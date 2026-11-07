@@ -173,6 +173,14 @@ def pad(kind, freqs, n):
 P = lambda s: [{'x': 1.0, 'o': .5, '.': 0}[c] for c in s.replace(' ', '')]
 
 ESTILOS = {
+    # campaña Silla Llena: tensión con pulso de monitor; en el giro, drop con todo
+    'drop': dict(bpm=128, root=50,
+                 pre=dict(escala='menor', prog=[0, 0, 5, 3], bajo='808', bajo_pat=P('x.......x..x....'),
+                          kick=P('x.......x.......'), clap=P('....x.......x...'), hat=P('x.x.x.x.x.x.x.xx'),
+                          lead='pluck', lead_pat=P('x..x..x...x..x..'), mel=[0, 3, 4, 3, 7, 4], pad='strings'),
+                 post=dict(escala='mayor', prog=[0, 4, 5, 3], bajo='808', bajo_pat=P('x..x..x.x..x..x.'),
+                           kick=P('x...x...x...x...'), clap=P('....x.......x...'), hat=P('xxxxxxxxxxxxxxxx'), ohat=P('..x...x...x...x.'),
+                           lead='saw', lead_pat=P('x.xx.x.xx.x.xx.x'), mel=[7, 9, 11, 9, 14, 11, 9, 7], pad='saw')),
     'noir': dict(bpm=90, root=50, swing=.18,
                  pre=dict(escala='menor', prog=[0, 3, 5, 4], bajo='walk', bajo_pat=P('x...x...x...x...'),
                           kick=P('x.........x.....'), snare=None, brush=P('....x.......x...'), hat=P('x..ox..ox..ox..o'),

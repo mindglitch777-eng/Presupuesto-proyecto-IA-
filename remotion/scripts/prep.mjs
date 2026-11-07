@@ -69,7 +69,7 @@ export function prep(id) {
       vozDesde: Math.round(padIn * FPS),       // cuadro (relativo a la escena) en que arranca la voz
       vozFin: Math.round((padIn + v.dur) * FPS),
       pausa: pausa ? [Math.round((padIn + v.dur + PAD_OUT) * FPS), dur] : null,
-      words: juntarMontos(v.words, v.montos).map((w) => ({
+      words: juntarMontos(v.words, [...(v.montos || []), { hablado: 'cu erre', ver: 'QR' }, { hablado: 'guasap', ver: 'WhatsApp' }]).map((w) => ({
         w: /^b[aá]rber$/i.test(w.w.replace(/[^\wáéíóú]/g, '')) ? w.w.replace(/b[aá]rber/i, 'BARBER') : w.w,
         n: norm(w.w),
         f: Math.round((padIn + w.t) * FPS),     // cuadro relativo a la escena

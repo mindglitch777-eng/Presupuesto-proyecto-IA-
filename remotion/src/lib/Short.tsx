@@ -2,7 +2,7 @@ import React from 'react';
 import { AbsoluteFill, Freeze, Html5Audio, interpolate, Sequence, staticFile, useCurrentFrame } from 'remotion';
 import { TransitionSeries, linearTiming, type TransitionPresentation } from '@remotion/transitions';
 import { EscCtx, MudoCtx, TLCtx, type Timeline } from './contexto';
-import { Subtitulos } from './Subtitulos';
+import { Subtitulos, type EstiloSubs } from './Subtitulos';
 import { cargarFuentes } from './fuentes';
 import { slide } from './transiciones';
 
@@ -11,8 +11,8 @@ export type ShortProps = { timeline: Timeline; guias?: boolean };
 /** Arma un video: audio (voz + música), escenas con sus transiciones, subtítulos y el empalme del loop
  *  (los últimos cuadros se funden con el cuadro 0, sin subtítulos ni destellos). */
 export const Short: React.FC<ShortProps & {
-  escenas: React.FC[]; trans?: (TransitionPresentation<any> | undefined)[]; acento?: string; subtitulos?: boolean; empalme?: number;
-}> = ({ timeline: tl, escenas, trans = [], acento, subtitulos = true, empalme = 8, guias }) => {
+  escenas: React.FC[]; trans?: (TransitionPresentation<any> | undefined)[]; acento?: string; subtitulos?: boolean; empalme?: number; subs?: EstiloSubs;
+}> = ({ timeline: tl, escenas, trans = [], acento, subtitulos = true, empalme = 8, guias, subs }) => {
   cargarFuentes();
   const f = useCurrentFrame();
   const Hook = escenas[0];
@@ -33,7 +33,7 @@ export const Short: React.FC<ShortProps & {
             return out;
           })}
         </TransitionSeries>
-        {subtitulos && <Subtitulos acento={acento} ocultarFinal={empalme} />}
+        {subtitulos && <Subtitulos acento={acento} ocultarFinal={empalme} {...subs} />}
         <Sequence from={tl.total - empalme} name="empalme loop">
           <AbsoluteFill style={{ opacity: interpolate(f, [tl.total - empalme, tl.total - 1], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) }}>
             <MudoCtx.Provider value>

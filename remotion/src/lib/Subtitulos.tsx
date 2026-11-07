@@ -6,7 +6,8 @@ import { FUENTE } from './fuentes';
 
 /** Subtítulos estilo TikTok (bloques de ~3 palabras, la que suena resaltada) en la franja y=1180-1330.
  *  Se ocultan cuando el 60 % de sus palabras ya está escrito en pantalla, y en los últimos cuadros (empalme del loop). */
-export const Subtitulos: React.FC<{ acento?: string; ocultarFinal?: number }> = ({ acento = '#FFD60A', ocultarFinal = 8 }) => {
+export type EstiloSubs = { top?: number; size?: number; fuente?: string };
+export const Subtitulos: React.FC<{ acento?: string; ocultarFinal?: number } & EstiloSubs> = ({ acento = '#FFD60A', ocultarFinal = 8, top = 1180, size = 64, fuente = FUENTE }) => {
   const tl = useTL();
   const f = useCurrentFrame();
   const fps = tl.fps;
@@ -31,13 +32,13 @@ export const Subtitulos: React.FC<{ acento?: string; ocultarFinal?: number }> = 
   const local = ms - page.startMs;
   const entra = interpolate(local, [0, 90], [0.85, 1], { extrapolateRight: 'clamp' });
   return (
-    <div style={{ position: 'absolute', left: 60, width: 840, top: 1180, height: 150, display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', transform: `scale(${entra})` }}>
+    <div style={{ position: 'absolute', left: 60, width: 840, top, height: 150, display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', transform: `scale(${entra})` }}>
       {page.tokens.map((t, i) => {
         const activo = ms >= t.fromMs && ms < t.toMs + 60;
         return (
           <span key={i} style={{
-            fontFamily: FUENTE, fontWeight: 900, fontSize: 64, lineHeight: 1.05, margin: '0 10px', textTransform: 'uppercase',
-            color: activo ? acento : '#fff', WebkitTextStroke: '12px #000', paintOrder: 'stroke', display: 'inline-block',
+            fontFamily: fuente, fontWeight: 900, fontSize: size, lineHeight: 1.05, margin: '0 10px', textTransform: 'uppercase',
+            color: activo ? acento : '#fff', WebkitTextStroke: `${Math.round(size / 5.5)}px #000`, paintOrder: 'stroke', display: 'inline-block',
             transform: `scale(${activo ? 1.12 : 1}) rotate(${activo ? -2 : 0}deg)`, textShadow: '0 6px 0 #000',
           }}>{t.text.trim()}</span>
         );

@@ -2,29 +2,12 @@ import React from 'react';
 import { Composition, staticFile, type CalculateMetadataFunction } from 'remotion';
 import type { ShortProps } from './lib/Short';
 import type { Timeline } from './lib/contexto';
-import { V01 } from './shorts/v01';
-import { V02 } from './shorts/v02';
-import { V03 } from './shorts/v03';
-import { V04 } from './shorts/v04';
-import { V05 } from './shorts/v05';
-import { V06 } from './shorts/v06';
-import { V07 } from './shorts/v07';
-import { V08 } from './shorts/v08';
-import { V09 } from './shorts/v09';
-import { V10 } from './shorts/v10';
+import { C01 } from './shorts/c01';
 
+// Campaña Silla Llena (CAMPANA.md). La versión anterior está en src/shorts-viejos/ y no se registra.
 // Cada video lee su línea de tiempo (la arma scripts/prep.mjs) y dura lo que dura su voz.
 const VIDEOS: { id: string; C: React.FC<ShortProps> }[] = [
-  { id: '01-peor-que-un-mal-corte', C: V01 },
-  { id: '02-barbero-o-secretario', C: V02 },
-  { id: '03-hay-un-ladron', C: V03 },
-  { id: '04-game-over', C: V04 },
-  { id: '05-cuanto-ganaste', C: V05 },
-  { id: '06-buscado-juan', C: V06 },
-  { id: '07-tu-peor-dia', C: V07 },
-  { id: '08-te-va-a-doler', C: V08 },
-  { id: '09-como-la-otra-vez', C: V09 },
-  { id: '10-busco-5-barberias', C: V10 },
+  { id: '01-tu-barberia-se-muere', C: C01 },
 ];
 
 const meta: CalculateMetadataFunction<ShortProps & { id: string }> = async ({ props }) => {

@@ -7,7 +7,8 @@ export type SonidoId =
   | 'chime' | 'choir' | 'clang' | 'clock' | 'coin' | 'cricket' | 'crowd' | 'ding' | 'door' | 'drawer' | 'error' | 'fanfare'
   | 'firework' | 'flash' | 'glass' | 'glitch' | 'heartbeat' | 'hit' | 'ice' | 'laugh' | 'neon' | 'paper' | 'pin' | 'pluck' | 'pop'
   | 'rewind' | 'riser' | 'rumble' | 'sad_horn' | 'snip' | 'splash' | 'squish' | 'stamp' | 'swish' | 'tape_stop' | 'tension'
-  | 'thud' | 'tick' | 'typewriter' | 'vibrate' | 'whoosh' | 'whoosh_rev' | 'wind' | 'zap';
+  | 'thud' | 'tick' | 'typewriter' | 'vibrate' | 'whoosh' | 'whoosh_rev' | 'wind' | 'zap'
+  | 'pip' | 'flatline' | 'ghost' | 'plaf' | 'superhero' | 'huff' | 'doorbell' | 'coins' | 'drip' | 'sob';
 
 /** Efecto de sonido en el cuadro `at` de la escena. */
 export const Sfx: React.FC<{ s: SonidoId; at: number; v?: number }> = ({ s, at, v = 0.6 }) => {
