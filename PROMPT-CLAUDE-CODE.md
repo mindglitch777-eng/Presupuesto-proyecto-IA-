@@ -4,29 +4,15 @@ Copiá lo que está debajo de la línea y pegalo en tu sesión de Claude Code so
 
 ---
 
-Leé `CLAUDE.md`. Quiero rehacer los 10 videos para barberías con **Remotion** (ya instalado en `remotion/`), con una calidad mucho más alta que la versión actual. Ahora los videos "no dan a entender nada"; tienen que ser específicos, entrar con fuerza y verse épicos.
+Leé `CLAUDE.md` y después `CAMPANA.md` completo. `CAMPANA.md` es la guía: la REGLA N.º 1 del gancho, la dirección visual y los 10 guiones.
 
-1. **Guiones:** usá `videos/guiones/01.js` a `05.js` como base y reescribí del 06 al 10 con el mismo estilo. Estructura de cada video:
-   - gancho brutal en el primer segundo;
-   - el problema con números concretos;
-   - comparación "SIN la app / CON la app" en pantalla partida;
-   - la app resolviéndolo en un celular animado;
-   - el resultado en plata;
-   - cierre con "Comentá BARBER".
+Hacé **solo el video 1, "Tu barbería se está muriendo"**, en Remotion, siguiendo el guion escena por escena:
+- **Personajes:** dibujos animados 2D en SVG, con contorno negro grueso y expresiones (el Barbero, el Fantasma, el Impaciente, la Silla y el Celular que entra como superhéroe).
+- **Fondos:** de un solo color saturado que cambia en cada escena. Nada de negro ni gris.
+- **Gancho:** en el primer segundo pegan juntos la imagen (el monitor de hospital con la línea que cae), el texto gigante y la voz.
+- **Ritmo:** algo nuevo cada 0,7 a 1,5 segundos. Transiciones con motivo, golpes de cámara con el beat y billetes que vuelan.
+- **Texto:** una idea por pantalla. Los subtítulos de la voz nunca encima del texto grande. Respetar las zonas seguras de TikTok.
+- **Voz:** Edge TTS `es-CO-GonzaloNeural` a `+22%`, con subtítulos palabra por palabra.
+- **Música y efectos:** música con "drop" en el giro y un efecto para cada acción.
 
-   Frases cortas y fuertes, en español rioplatense.
-2. **Componentes de Remotion reutilizables:**
-   - fondo con degradés de colores vivos en movimiento (usá `@remotion/noise`);
-   - texto que cae de golpe con contorno, y texto palabra por palabra con palabras resaltadas;
-   - contador de plata con rayos y explosión de partículas;
-   - comparación VS;
-   - celular con las pantallas de la app (agenda, seña, reserva, fila virtual, caja, ficha, puntos, clientes que no volvieron);
-   - lista con emojis, confeti y cierre con llamado a la acción.
-3. **Transiciones** entre escenas con `TransitionSeries` de `@remotion/transitions`, distintas en cada corte. Sumá sacudones de cámara en los golpes y desenfoque de movimiento (`@remotion/motion-blur`) donde sume.
-4. **Voz:** script de preparación que genere la voz de cada escena con Edge TTS (`es-CO-GonzaloNeural`, `+22%`, podés reutilizar `videos/engine/voz.py`). Guardá audio y tiempos de palabra en `remotion/public/`, y que la duración de cada escena se ajuste a la voz (usá `calculateMetadata`).
-5. **Subtítulos** estilo TikTok sincronizados con `@remotion/captions`.
-6. **Música y efectos** generados por código (reutilizá `videos/engine/musica.py` y `sfx.py`), con la música más baja cuando habla la voz.
-7. **Workflow:** cambiá `.github/workflows/videos.yml` para que renderice con Remotion en GitHub Actions, los 10 en paralelo, y suba los MP4 a `videos/render/`.
-8. **Revisión:** antes de dar algo por terminado, sacá capturas de los momentos con más cosas en pantalla de cada video y revisalas. Que se lea todo y que nada quede tapado por la interfaz de TikTok.
-
-Cuando estén listos, pasame los links de descarga directa de los 10.
+Antes de entregar, sacá capturas de cada escena, revisalas contra `CAMPANA.md` y corregí lo que no cumpla. Renderizalo en GitHub Actions y pasame el link directo de descarga. No hagas los otros 9 hasta que yo apruebe este.

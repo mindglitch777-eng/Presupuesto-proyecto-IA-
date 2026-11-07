@@ -1,5 +1,8 @@
 # Videos para barberías — instrucciones para Claude Code
 
+## LO MÁS IMPORTANTE
+**`CAMPANA.md` es la fuente de verdad:** los 10 guiones, la REGLA N.º 1 del gancho y la dirección visual. Todo lo que contradiga ese archivo queda viejo. Los guiones de `GUIONES.md` y `videos/guiones/` NO se usan más.
+
 ## Objetivo
 Diez videos verticales (TikTok, YouTube Shorts y Reels) para validar si las barberías argentinas quieren una app de gestión. Cada video tiene que dejar claro **qué es la app y qué problema resuelve**. Todo se hace con código.
 
@@ -20,12 +23,15 @@ Diez videos verticales (TikTok, YouTube Shorts y Reels) para validar si las barb
 - **Lo que la app hace de verdad:** turnos online con seña por transferencia, fila virtual con QR, caja del día, ficha de cada cliente, lista de clientes que no volvieron con botón para escribirles por WhatsApp (link wa.me, sin API) y tarjeta de puntos.
 
 ## Estado actual
-- `GUIONES.md` tiene la primera versión de los 10 guiones.
-- `videos/guiones/01.js` a `05.js` son la versión nueva, más fuerte, escrita para el motor viejo con plantillas (`videos/engine/plantillas.js`). Sirven como texto base para Remotion. Del 06 al 10 hay que reescribirlos con el mismo estilo.
-- `videos/engine/` es el motor viejo (canvas + Playwright). Queda como referencia; los videos nuevos se hacen en Remotion.
-- `remotion/` es la base del proyecto Remotion: dependencias, `remotion.config.ts` y una composición de prueba. Ya renderiza.
-- `.github/workflows/videos.yml` renderiza con el motor viejo. Hay que cambiarlo para que use Remotion.
-- `videos/engine/voz.py` ya genera la voz con Edge y el tiempo de cada palabra. Se puede reutilizar.
+- **`CAMPANA.md`:** versión aprobada. Nombre de la app: **Silla Llena**. Estética: dibujo animado 2D tipo sticker, con personajes en SVG y fondos de un color saturado; nada de fondos negros ni grises.
+- **La versión anterior en Remotion,** en la rama `ccr-2a2eeb48-jv57ra`, fue rechazada: no se entendía de qué se trataba, era oscura, no tenía personajes y los textos se pisaban. Se puede reutilizar código técnico de ahí (voz, audio, workflow), pero no el estilo.
+- **`remotion/`:** la base del proyecto en `main`.
+- **`videos/engine/`:** `voz.py` (Edge TTS + tiempos por palabra), `musica.py` y `sfx.py` se pueden reutilizar.
+- **`.github/workflows/videos.yml`:** hay que hacer que renderice con Remotion.
+
+## Forma de trabajo
+1. **Primero un solo video completo** (el 1, "Tu barbería se está muriendo"). Antes de seguir, el usuario lo tiene que aprobar.
+2. **Antes de entregar,** sacar capturas de cada escena y revisarlas contra la REGLA N.º 1 y la dirección visual de `CAMPANA.md`.
 
 ## Comandos
 ```bash
